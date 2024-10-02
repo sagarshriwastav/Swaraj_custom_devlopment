@@ -1,0 +1,76 @@
+managed with additional save implementation in class ZBP_I_TABLEFORLOANMODULET_S unique;
+strict;
+with draft;
+define behavior for ZI_TableForLoanModuleT_S alias TableForLoanModuAll
+draft table ZLOAN_MODUL_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   HideTransport,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForLoanModuleT { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForLoanModuleT alias TableForLoanModuleT
+persistent table ZLOAN_MODULE_TAB
+draft table ZLOAN_MODULE__D
+lock dependent by _TableForLoanModuAll
+authorization dependent by _TableForLoanModuAll
+
+{
+  field ( mandatory : create )
+   Companycode,
+   Glcode;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Companycode,
+   Glcode;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZLOAN_MODULE_TAB
+  {
+    Companycode = COMPANYCODE;
+    Glcode = GLCODE;
+    Loannoid = LOANNOID;
+    Sentiondate = SENTIONDATE;
+    Totalloanamount = TOTALLOANAMOUNT;
+    Moratoriumperiod = MORATORIUMPERIOD;
+    Numberofinstalments = NUMBEROFINSTALMENTS;
+    Interestrate = INTERESTRATE;
+    Repaymentfrequency = REPAYMENTFREQUENCY;
+    Installmentamount = INSTALLMENTAMOUNT;
+  }
+
+  association _TableForLoanModuAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

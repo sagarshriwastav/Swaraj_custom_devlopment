@@ -1,0 +1,5 @@
+@MappingRole: true
+define role YC_TableForYarnTesting {
+  grant select on YC_TableForYarnTesting
+  where INHERITING CONDITIONS FROM ENTITY YI_TableForYarnTesting;
+}

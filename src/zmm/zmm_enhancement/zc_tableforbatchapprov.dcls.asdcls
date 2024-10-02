@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_TableForBatchApprov {
+  grant select on ZC_TableForBatchApprov
+  where INHERITING CONDITIONS FROM ENTITY ZI_TableForBatchApprov;
+}

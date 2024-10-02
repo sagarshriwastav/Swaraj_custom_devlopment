@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service definition forZDNM_SER'
+define service ZDNM_SERDEF {
+  expose ZDNM_SER as ZDNM_ALIAS;
+  expose I_Plant as PlantData;
+  expose ZPP_SET_NO_MAT_DES as MAT_DES;
+}

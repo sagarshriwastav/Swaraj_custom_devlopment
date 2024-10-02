@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Change Grey Program'
+define service ZPP_CHANGE_GREY_PROGRAM_DEF {
+  expose ZPP_CHANGE_GREY_PROGRAM_CDS as FeatchData;
+}

@@ -1,0 +1,4 @@
+define service ZUI_ZBANKTMGTABLE {
+  expose ZC_ZBANKTMGTABLE_S as ZbankTmgTableAll;
+  expose ZC_ZBANKTMGTABLE as ZbankTmgTable;
+}

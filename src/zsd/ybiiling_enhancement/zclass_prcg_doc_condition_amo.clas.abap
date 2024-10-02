@@ -1,0 +1,24 @@
+CLASS zclass_prcg_doc_condition_amo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    interfaces IF_BADI_INTERFACE .
+   interfaces IF_PRCG_DOC_ITM_CNDN_AMOUNT .
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCLASS_PRCG_DOC_CONDITION_AMO IMPLEMENTATION.
+
+
+method if_prcg_doc_itm_cndn_amount~change_condition_amount .
+
+
+ENDMETHOD.
+ENDCLASS.

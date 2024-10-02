@@ -1,0 +1,51 @@
+managed implementation in class zbp_fipayment_program unique;
+strict ( 2 );
+
+define behavior for ZFIPAYMENT_PROGRAM //alias <alias_name>
+persistent table zpayment_program
+lock master
+authorization master ( instance )
+//etag master <field_name>
+
+{
+  create;
+  update;
+  delete;
+  mapping for zpayment_program
+    {
+      Accountingdocument     = accountingdocument;
+      Finyear                = finyear;
+      Tokennum               = tokennum;
+      Additionalcurrency1    = additionalcurrency1;
+      Assignmentreference    = assignmentreference;
+      Clearingjournalentry   = clearingjournalentry;
+      Accgroup               = accgroup;
+      Reffdate               = reffdate;
+      Reffdoc                = reffdoc;
+      Glbalance              = glbalance;
+      Notdueamonnt           = notdueamonnt;
+      Pandingamount          = pandingamount;
+      Glbalanceafteradv      = glbalanceafteradv;
+      Gstinput               = gstinput;
+      Companycode            = companycode;
+      Netduedate             = netduedate;
+      Paymentterms           = paymentterms;
+      Postingdate            = postingdate;
+      Supplier               = supplier;
+      Suppliername           = suppliername;
+      Transactioncurrency    = transactioncurrency;
+      Approve                = approve;
+      Request                = request;
+      hold                   = hold;
+      Remark                 = remark;
+      Partialpayment         = partialpayment;
+      Amount                 = amount;
+      JournalEntryType       = journalentrytype;
+      Reftext                = reftext;
+      Specialjournalindictor = specialjournalindictor;
+      Duedays                = duedays;
+      Journalentrydate       = journalentrydate;
+      Invoicereference       = invoicereference;
+       Approvalchecking     =    approvalchecking ;
+    }
+}

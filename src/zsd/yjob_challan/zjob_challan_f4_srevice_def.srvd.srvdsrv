@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For JobChallan Print F4'
+define service ZJOB_CHALLAN_F4_Srevice_Def {
+  expose ZJOB_CHALLAN_PRINT_F4_CDS;
+}

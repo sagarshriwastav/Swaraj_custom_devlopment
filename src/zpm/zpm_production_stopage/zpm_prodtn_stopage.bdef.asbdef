@@ -1,0 +1,59 @@
+managed implementation in class zbp_pm_prodtn_stopage unique;
+
+strict ( 2 );
+
+define behavior for ZPM_PRODTN_STOPAGE //alias <alias_name>
+persistent table zpm_prod_stopag1
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+   field ( mandatory : create )
+   machinenumber ,
+   plant,
+   stopagetime,
+   postindate,
+   reasoncode;
+
+     field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LocalLastChangedAt,
+   LastChangedAt,
+   LastChangedBy;
+
+  field ( readonly : update )
+   machinenumber ,
+   plant,
+   stopagetime,
+   postindate,
+   reasoncode;
+
+  create;
+  update;
+  delete;
+
+  determination ZPRODSAVR on save { create; }
+   mapping for zpm_prod_stopag1
+   {
+   Machinenumber = machinenumber;
+   Plant         = plant;
+   Stopagetime   = stopagetime;
+   Postindate    = postindate ;
+   Reasoncode  = reasoncode ;
+   Department    =  department;
+   Departmentheader = departmentheader;
+   Reason      =  reason;
+   Shifta      =  shifta ;
+   Shiftb      =  shiftb ;
+   Stopagehour =  stopagehour ;
+   Stopagepercent = stopagepercent ;
+   Tagetproduction = tagetproduction ;
+   CreatedBy  = created_by;
+   CreatedAt  =  created_at;
+   LastChangedBy  = last_changed_by;
+   LastChangedAt  =  last_changed_at;
+   LocalLastChangedAt   =  local_last_changed_at ;
+}
+}

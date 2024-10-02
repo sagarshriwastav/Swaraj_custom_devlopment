@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINITION FOR BUDGET CDS'
+define service ZWBC_BUDGET_DEF {
+  expose ZWBC_BUDGET_CDS;
+}

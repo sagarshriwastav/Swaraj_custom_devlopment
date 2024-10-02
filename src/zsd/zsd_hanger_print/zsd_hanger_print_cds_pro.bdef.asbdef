@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for ZSD_HANGER_PRINT_CDS_PRO //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+}

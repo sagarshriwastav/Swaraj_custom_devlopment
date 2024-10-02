@@ -1,0 +1,72 @@
+managed with additional save implementation in class ZBP_I_ZGATETABLE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZgateTable_S alias ZgateTableAll
+draft table ZGATE_TABLE_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZgateTable { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZgateTable alias ZgateTable
+persistent table ZGATE_TABLE
+draft table ZGATE_TABLE_D
+etag master LocalLastChangedAt
+lock dependent by _ZgateTableAll
+authorization dependent by _ZgateTableAll
+
+{
+  field ( mandatory : create )
+   Plant;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Plant;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZGATE_TABLE
+  {
+    Plant = PLANT;
+    UserId = USER_ID;
+    UserName = USER_NAME;
+    GateEntryType = GATE_ENTRY_TYPE;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ZgateTableAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

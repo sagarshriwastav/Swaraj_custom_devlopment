@@ -1,0 +1,17 @@
+@EndUserText.label: 'SERVICE DEFINATION FOR GATE'
+define service YGATE_SERDE {
+  expose YGALESR_PROJ          as zgatehead;
+  expose YGATEITEM_PROJ        as zgateitem_ent;
+  expose YPLANT_1              as zpalnt_data;
+  expose YDELI_DATA            as delieverydata;
+  expose YGATE_HEADER          as zgat;
+  expose YGATE_ITEMCDS         as gate_item;
+  expose YPURCHASE_ITEM        as purchase_ordentity;
+  expose YPURGROUP             as purchasegroup;
+  expose zsupplier             as SUPPLIER;
+  expose YMATERIAL             as MATERIAL;
+  expose ZMM_CHEACK_INVOCIE_NO as InvoiceChck;
+  expose ZCUSTOMER_DEATIL_CDS  as Customer;
+  expose YMATERIALCUS          as CusMATERIAL;
+  expose ZMM_Zgate_CDS         as tmgtable;
+}

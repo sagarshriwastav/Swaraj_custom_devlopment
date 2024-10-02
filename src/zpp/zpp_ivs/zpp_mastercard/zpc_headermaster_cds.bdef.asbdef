@@ -1,0 +1,195 @@
+managed implementation in class zbp_pc_headermaster_cds3 unique;
+strict(2);
+
+define behavior for ZPC_HEADERMASTER_CDS alias ZPC_HEADERMASTER_ALCDS
+persistent table zpc_headermaster
+etag master LastChangedAt
+lock master
+authorization master( global )
+//authorization master ( global ,  instance )
+//etag m=ter <field_name>
+
+{
+  field ( mandatory : create )
+   zpno;
+
+     field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LocalLastChangedAt,
+   LastChangedAt,
+   LastChangedBy;
+
+  field ( readonly : update )
+   zpno;
+
+
+  create;
+  update;
+  delete;
+  determination zdeter_m on save { create; }
+
+  mapping for zpc_headermaster
+  {
+    zpno = Zpno;
+    zpdate = Zpdate;
+    zpdevno = Zpdevno;
+    zpunit = Zpunit;
+    ploom = Ploom;
+    zpqlycode = Zpqlycode;
+    zpreed1 = Zpreed1;
+    zppicks = Zppicks;
+    zpreedspace = Zpreedspace;
+    zpbrand = Zpbrand;
+    zptotends = Zptotends;
+    extraends = extraends;
+    zpbeamlgh1 = Zpbeamlgh1;
+    zpbeamlgh2 = Zpbeamlgh2;
+    zpepi = Zpepi;
+    zpdytype = Zpdytype;
+    zpweavetype = Zpweavetype;
+    zpfinwdth = Zpfinwdth;
+    zppriority = Zppriority;
+    zpptyname = Zpptyname;
+    zpwtpermtr = Zpwtpermtr;
+    zwawtpermtr = zwawtpermtr;
+    zwewtpermtr  = zwewtpermtr;
+    ztowtpermtr =  ztowtpermtr;
+    remark  = remark;
+    zpshldbewt = Zpshldbewt;
+    zpstatus = Zpstatus;
+    zpremarks = Zpremarks;
+    zpusername = Zpusername;
+    zptime = Zptime;
+    dpr = Dpr;
+    epr = Epr;
+    epd = Epd;
+    ppr = Ppr;
+    stends = Stends;
+    stdents = Stdents;
+    bodyends = Bodyends;
+    warptends = Warptends;
+    wefttends = Wefttends;
+    stepr = Stepr;
+    swpmtr = Swpmtr;
+    wstepr = Wstepr;
+    wswpmtr = Wswpmtr;
+    totmono = Totmono;
+    selvedgewpmtr = Selvedgewpmtr;
+    stends1 = Stends1;
+    crimp = Crimp;
+    zunit = Zunit;
+    zanlyswt = Zanlyswt;
+    zselvtyp = Zselvtyp;
+    zmonotyp = Zmonotyp;
+    pdvlp = Pdvlp;
+    psnm = Psnm;
+    propac = Propac;
+    plength = Plength;
+    siqlty = Siqlty;
+    changedon = Changed_On;
+    changedby = Changed_By;
+    Zvbeln = ZVbeln;
+    Zposnr = ZPosnr;
+    zdent = Zdent;
+    blend = Blend;
+    releasemcard = Release_Mcard;
+    releasedate = Release_Date;
+    releaseby = Release_By;
+    saleswidth = Sales_Width;
+    oldqlty = Old_Qlty;
+    zsubweave = Zsub_Weave;
+    DyeSort  = DyeSort;
+    pdnumber = pdnumber;
+    supplier   =  supplier;
+    pvends     = pvends;
+    fabricends  =   fabricends;
+    weavingreamrk   = weavingreamrk;
+    selvedgeEnds  = selvedgeEnds;
+    CreatedBy                 = created_by;
+      CreatedAt                 = created_at;
+      LastChangedBy             = last_changed_by;
+      LastChangedAt             = last_changed_at;
+      LocalLastChangedAt        = local_last_changed_at;
+
+}
+}
+
+//*******************************************************
+//{
+//  create;
+//  update;
+//  delete;
+//  mapping for zpc_headermaster
+//  {
+//    zpno = Zpno;
+//    zpdate = Zpdate;
+//    zpdevno = Zpdevno;
+//    zpunit = Zpunit;
+//    ploom = Ploom;
+//    zpqlycode = Zpqlycode;
+//    zpreed1 = Zpreed1;
+//    zppicks = Zppicks;
+//    zpreedspace = Zpreedspace;
+//    zpbrand = Zpbrand;
+//    zptotends = Zptotends;
+//    zpbeamlgh1 = Zpbeamlgh1;
+//    zpbeamlgh2 = Zpbeamlgh2;
+//    zpepi = Zpepi;
+//    zpdytype = Zpdytype;
+//    zpweavetype = Zpweavetype;
+//    zpfinwdth = Zpfinwdth;
+//    zppriority = Zppriority;
+//    zpptyname = Zpptyname;
+//    zpwtpermtr = Zpwtpermtr;
+//    zpshldbewt = Zpshldbewt;
+//    zpstatus = Zpstatus;
+//    zpremarks = Zpremarks;
+//    zpusername = Zpusername;
+//    zptime = Zptime;
+//    dpr = Dpr;
+//    epr = Epr;
+//    epd = Epd;
+//    ppr = Ppr;
+//    stends = Stends;
+//    stdents = Stdents;
+//    bodyends = Bodyends;
+//    warptends = Warptends;
+//    wefttends = Wefttends;
+//    stepr = Stepr;
+//    swpmtr = Swpmtr;
+//    wstepr = Wstepr;
+//    wswpmtr = Wswpmtr;
+//    totmono = Totmono;
+//    selvedgewpmtr = Selvedgewpmtr;
+//    stends1 = Stends1;
+//    crimp = Crimp;
+//    zunit = Zunit;
+//    zanlyswt = Zanlyswt;
+//    zselvtyp = Zselvtyp;
+//    zmonotyp = Zmonotyp;
+//    pdvlp = Pdvlp;
+//    psnm = Psnm;
+//    propac = Propac;
+//    plength = Plength;
+//    siqlty = Siqlty;
+//    changedon = Changed_On;
+//    changedby = Changed_By;
+//    Zvbeln = ZVbeln;
+//    Zposnr = ZPosnr;
+//    zdent = Zdent;
+//    blend = Blend;
+//    releasemcard = Release_Mcard;
+//    releasedate = Release_Date;
+//    releaseby = Release_By;
+//    saleswidth = Sales_Width;
+//    oldqlty = Old_Qlty;
+//    zsubweave = Zsub_Weave;
+//    CreatedBy                 = created_by;
+//      CreatedAt                 = created_at;
+//      LastChangedBy             = last_changed_by;
+//      LastChangedAt             = last_changed_at;
+//      LocalLastChangedAt        = local_last_changed_at;
+//
+//}
+//}

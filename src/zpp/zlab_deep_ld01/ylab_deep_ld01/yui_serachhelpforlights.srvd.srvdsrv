@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'YI_SerachHelpForLightS_S'
+define service YUI_SERACHHELPFORLIGHTS {
+  expose YI_SERACHHELPFORLIGHTS_S as SerachHelpForLigAll;
+  expose YI_SERACHHELPFORLIGHTS as SerachHelpForLightS;
+}

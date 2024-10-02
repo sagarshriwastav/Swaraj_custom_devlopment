@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZyarnConsumTmg', 
+    typeNamePlural: 'ZyarnConsumTmgs', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZYARN CONSUM TMG', 
+      value: 'Fabric'
+    }
+  }
+}
+annotate view ZC_ZyarnConsumTmg with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Fabric'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Fabric'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZyarnConsumTmg', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZYARN CONSUM TMG', 
+    position: 1 
+  } ]
+  Fabric;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Yarn'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Yarn'
+  } ]
+  Yarn;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Pick'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Pick'
+  } ]
+  Pick;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  Localcreatedby;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  Localcreatedat;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  Lastchangedat;
+}

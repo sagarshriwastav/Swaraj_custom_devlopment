@@ -1,0 +1,4 @@
+define service ZUI_ZSALESPOLICTAB {
+  expose ZC_ZSALESPOLICTAB_S as ZsalesPolicTabAll;
+  expose ZC_ZSALESPOLICTAB as ZsalesPolicTab;
+}

@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORLOOMTYPETMG {
+  expose ZC_TABLEFORLOOMTYPETMG_S as TableForLoomTypeAll;
+  expose ZC_TABLEFORLOOMTYPETMG as TableForLoomTypeTmg;
+}

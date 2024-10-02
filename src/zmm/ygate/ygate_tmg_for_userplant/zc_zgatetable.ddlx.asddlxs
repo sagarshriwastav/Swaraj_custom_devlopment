@@ -1,0 +1,76 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZgateTable', 
+    typeNamePlural: 'ZgateTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZGATE TABLE', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_ZgateTable with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZgateTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZGATE TABLE', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'UserId'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'UserId'
+  } ]
+  UserId;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'UserName'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'UserName'
+  } ]
+  UserName;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'GateEntryType'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'GateEntryType'
+  } ]
+  GateEntryType;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LastChangedAt;
+}

@@ -1,0 +1,77 @@
+managed with additional save implementation in class ZBP_I_ZPACKDSCREENTABLE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZpackdScreenTable_S alias ZpackdScreenTablAll
+draft table ZPACKFAULT_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZpackdScreenTable { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZpackdScreenTable alias ZpackdScreenTable
+persistent table ZPACKFAULT
+draft table ZPACKFAULT_D
+etag master LocalLastChangedAt
+lock dependent by _ZpackdScreenTablAll
+authorization dependent by _ZpackdScreenTablAll
+
+{
+  field ( mandatory : create )
+   Code;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Code;
+
+
+  update( features : global );
+  delete( features : global );
+
+  factory action ( features : instance ) CopyZpackdScreenTable parameter ZD_CopyZpackdScreenTableP [1];
+
+  mapping for ZPACKFAULT
+  {
+    Code = CODE;
+    Description = DESCRIPTION;
+    Farea = FAREA;
+    Ftype = FTYPE;
+    Fname = FNAME;
+    Deptno = DEPTNO;
+    Zdept = ZDEPT;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ZpackdScreenTablAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

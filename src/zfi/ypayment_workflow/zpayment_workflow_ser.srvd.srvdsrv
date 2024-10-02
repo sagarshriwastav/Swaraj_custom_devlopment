@@ -1,0 +1,4 @@
+@EndUserText.label: 'Payment Workflow Service'
+define service ZPAYMENT_WORKFLOW_SER {
+  expose ZPAYMENT_WORKFLOW_RESPONCE as pay_res;
+}

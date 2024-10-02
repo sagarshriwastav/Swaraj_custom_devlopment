@@ -1,0 +1,96 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForYarnTesting', 
+    typeNamePlural: 'TableForYarnTestings', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Yarn Testing Parameters Tmg', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view YC_TableForYarnTestingG with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'YI_TableForYarnTestingG', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Yarn Testing Parameters Tmg', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Srno'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Srno'
+  } ]
+  Srno;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Progaram'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Progaram'
+  } ]
+  Progaram;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Progaramno'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Progaramno'
+  } ]
+  Progaramno;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Progaramname'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Progaramname'
+  } ]
+  Progaramname;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Parameters'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Parameters'
+  } ]
+  Parameters;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  LastChangedAt;
+}

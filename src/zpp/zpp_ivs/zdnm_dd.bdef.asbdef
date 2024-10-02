@@ -1,0 +1,57 @@
+managed implementation in class ZDNM_BEH unique;
+strict ( 2 );
+
+define behavior for ZDNM_DD alias ZDNM_ALIAS
+persistent table zdnm_set
+etag master LastChangedAt
+lock master
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Werks,
+   ZmcNo,
+   ZsetNo,
+   ZfsetNo,
+   ZsetStd;
+
+  field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LocalLastChangedAt,
+   LastChangedAt,
+   LastChangedBy;
+
+  field ( readonly : update )
+   Werks,
+   ZmcNo,
+   ZsetNo,
+   ZfsetNo,
+   ZsetStd;
+
+
+  create;
+  update;
+  delete;
+  determination zdeter_m on save { create; }
+
+  mapping for ZDNM_SET
+  {
+    Werks = werks;
+    ZmcNo = zmc_no;
+    ZsetNo = zset_no;
+    ZfsetNo = zfset_no;
+    ZsetStd = zset_std;
+    UnitField = unit_field;
+    Zlength = zlength;
+    ZfnDate = zfn_date;
+    ZfnTime = zfn_time;
+    mat_des = mat_des;
+    material = material;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

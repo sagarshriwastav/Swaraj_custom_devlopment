@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Def For Beam Program'
+define service ZPP_BEAM_PROGRAM_SERVICE_DEF {
+  expose ZPP_BEAM_PROGRAM_CDS  as BeamProgram;
+  expose ZPP_BEAM_PROGRAM_CHNG as CHANGEBEAMPROGRAM;
+  expose I_Plant               as plantf4;
+}

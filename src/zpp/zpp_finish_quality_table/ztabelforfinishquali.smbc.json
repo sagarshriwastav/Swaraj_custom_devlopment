@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Tmg For Zdm_SortMaster Table For Master Card Scree",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_TABELFORFINISHQUALI_O4",
+    "serviceName": "ZUI_TABELFORFINISHQUALI_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "TabelForFinishQuAll",
+    "name": "Tabel For Finish Quality Tmg",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "TabelForFinishQuAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "TabelForFinishQuali",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "creationRow"
+      }
+    ]
+  }
+}

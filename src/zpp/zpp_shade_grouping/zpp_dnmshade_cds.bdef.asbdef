@@ -1,0 +1,27 @@
+managed implementation in class zbp_pp_dnmshade_cds unique;
+strict ( 1 );
+
+define behavior for ZPP_DNMSHADE_CDS //alias <alias_name>
+persistent table zpp_dnmshade
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+
+  mapping for zpp_dnmshade
+  {
+  Plant = plant;
+  Material = material;
+  Rollno = rollno;
+  Materialdesc = materialdesc;
+  Follono = follono;
+  Shgrp = shgrp;
+
+  }
+
+
+}

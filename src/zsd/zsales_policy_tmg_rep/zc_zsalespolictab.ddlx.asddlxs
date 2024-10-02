@@ -1,0 +1,106 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZsalesPolicTab', 
+    typeNamePlural: 'ZsalesPolicTabs', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZSALES POLIC TAB', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_ZsalesPolicTab with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZsalesPolicTab', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZSALES POLIC TAB', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Policyno'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Policyno'
+  } ]
+  Policyno;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Nameofpolicyprovider'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Nameofpolicyprovider'
+  } ]
+  Nameofpolicyprovider;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Policystartdate'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Policystartdate'
+  } ]
+  Policystartdate;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Policycoverageperiod'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Policycoverageperiod'
+  } ]
+  Policycoverageperiod;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Policyrenweldate'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Policyrenweldate'
+  } ]
+  Policyrenweldate;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Policycoverageamount'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Policycoverageamount'
+  } ]
+  Policycoverageamount;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  Localcreatedby; 
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  Localcreatedat;
+  
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  Lastchangedat;
+}

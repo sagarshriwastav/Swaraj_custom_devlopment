@@ -1,0 +1,13 @@
+managed implementation in class zbp_account_user_cds unique;
+strict ( 1 );
+
+define behavior for ZACCOUNT_USER_CDS //alias <alias_name>
+persistent table zaccount_userid
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+}

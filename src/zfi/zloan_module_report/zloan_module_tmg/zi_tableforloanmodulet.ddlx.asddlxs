@@ -1,0 +1,122 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForLoanModuleT', 
+    typeNamePlural: 'Table For Loan ModuleTs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Loan Module Tmg', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZI_TableForLoanModuleT with
+{
+  @UI.identification: [ {
+    position: 1 ,
+    label: 'Company Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 ,
+    label: 'Company Code'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForLoanModuleT', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Loan Module Tmg', 
+    position: 1
+     
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 ,
+    label: 'GL Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 ,
+    label: 'GL Code'
+  } ]
+  Glcode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Loan No./ID'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Loan No./ID'
+  } ]
+  Loannoid;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Sention Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Sention Date'
+  } ]
+  Sentiondate;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Total Loan Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Total Loan Amount'
+  } ]
+  Totalloanamount;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Moratorium Period(In months)'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Moratorium Period(In months)'
+  } ]
+  Moratoriumperiod;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Number of Instalments (In months)'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Number of Instalments (In months)'
+  } ]
+  Numberofinstalments;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    label: 'Interest Rate'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    label: 'Interest Rate'
+  } ]
+  Interestrate;
+  
+  @UI.identification: [ {
+    position: 9 , 
+    label: 'Repayment Frequency'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 , 
+    label: 'Repayment Frequency'
+  } ]
+  Repaymentfrequency;
+  
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Installment Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Installment Amount'
+  } ]
+  Installmentamount;
+}

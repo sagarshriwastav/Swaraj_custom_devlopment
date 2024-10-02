@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for YC_ChemicalTestingTabl_S alias ChemicalTestingTAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _ChemicalTestingTabl { create; with draft; }
+}
+
+define behavior for YC_ChemicalTestingTabl alias ChemicalTestingTabl
+
+{
+  use update;
+  use delete;
+
+  use association _ChemicalTestingTAll { with draft; }
+}

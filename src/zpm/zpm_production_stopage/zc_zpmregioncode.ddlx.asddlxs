@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZpmRegionCode', 
+    typeNamePlural: 'ZpmRegionCodes', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZPM REGION CODE', 
+      value: 'Code'
+    }
+  }
+}
+annotate view ZC_ZpmRegionCode with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Code'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZpmRegionCode', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZPM REGION CODE', 
+    position: 1 
+  } ]
+  Code;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  Description;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalLastChangedAt;
+}

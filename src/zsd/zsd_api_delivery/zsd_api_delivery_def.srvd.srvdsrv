@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Api For Delivery'
+define service ZSD_API_DELIVERY_DEF {
+  expose ZSD_API_DELIVERY_CDS as ApiDelCustom;
+}

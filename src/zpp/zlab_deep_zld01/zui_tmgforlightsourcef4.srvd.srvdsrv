@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TmgForLightsourceF4_S'
+define service ZUI_TMGFORLIGHTSOURCEF4 {
+  expose ZI_TMGFORLIGHTSOURCEF4_S as TmgForLightsourcAll;
+  expose ZI_TMGFORLIGHTSOURCEF4 as TmgForLightsourceF4;
+}

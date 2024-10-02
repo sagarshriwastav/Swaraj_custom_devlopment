@@ -1,0 +1,28 @@
+managed implementation in class zbp_pc_monogram_cds unique;
+strict;
+
+define behavior for zpc_monogram_CDS //alias <alias_name>
+persistent table zpc_monogram
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  mapping for zpc_monogram
+  {
+
+     zpno = Zpno;
+     zpmsno = Zpmsno;
+    zpmmonog = Zpmmonog;
+    zpmsaveas = Zpmsaveas;
+    zpmlength = Zpmlength;
+    zpmmktordno = Zpmmktordno;
+    zpmremarks = Zpmremarks;
+    mark = Mark;
+    zname = Zname;
+    kunnr = Kunnr;
+}
+}

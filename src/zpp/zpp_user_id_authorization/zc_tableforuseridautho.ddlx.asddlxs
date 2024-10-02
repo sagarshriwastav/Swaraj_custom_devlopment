@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForUserIdAutho', 
+    typeNamePlural: 'TableForUserIdAuthos', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For User Id Authorization', 
+      value: 'Username'
+    }
+  }
+}
+annotate view ZC_TableForUserIdAutho with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Username'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Username'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForUserIdAutho', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For User Id Authorization', 
+    position: 1 
+  } ]
+  Username;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Password'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Password'
+  } ]
+  Password;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Mat Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Mat Type'
+  } ]
+  mattpye;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LastChangedAt;
+}

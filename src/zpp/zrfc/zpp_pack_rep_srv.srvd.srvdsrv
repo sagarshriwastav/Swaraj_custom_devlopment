@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE FOR DENIM  PACKING REPORT'
+define service ZPP_PACK_REP_SRV {
+  expose ZPP_PACK_REP_CDS;
+}

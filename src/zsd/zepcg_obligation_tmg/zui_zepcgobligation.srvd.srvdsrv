@@ -1,0 +1,4 @@
+define service ZUI_ZEPCGOBLIGATION {
+  expose ZC_ZEPCGOBLIGATION_S as ZepcgObligationAll;
+  expose ZC_ZEPCGOBLIGATION as ZepcgObligation;
+}

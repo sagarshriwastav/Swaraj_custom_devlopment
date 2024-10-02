@@ -1,0 +1,61 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TmgForMigovalidatio', 
+    typeNamePlural: 'TmgForMigovalidatios', 
+    title: {
+      type: #STANDARD, 
+      label: ' TMG FOR MIGOVALIDATION', 
+      value: 'SrNo'
+    }
+  }
+}
+annotate view ZI_TmgForMigovalidatio with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'SrNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'SrNo'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TmgForMigovalidatio', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: ' TMG FOR MIGOVALIDATION', 
+    position: 1 
+  } ]
+  SrNo;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Username'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Username'
+  } ]
+  Username;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Username'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: ' user_id'
+  } ]
+   userid;
+   
+    @UI.identification: [ {
+    position: 4 , 
+    label: 'Username'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: '  remark '
+  } ]
+    remark ;
+}

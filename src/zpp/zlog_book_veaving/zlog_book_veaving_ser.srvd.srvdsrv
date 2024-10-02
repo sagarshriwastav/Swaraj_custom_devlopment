@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination for ZLOG_BOOK_TAB_CDS'
+define service ZLOG_BOOK_VEAVING_SER {
+  expose ZLOG_BOOK_TAB_CDS as Log_Book_Veaving;
+}

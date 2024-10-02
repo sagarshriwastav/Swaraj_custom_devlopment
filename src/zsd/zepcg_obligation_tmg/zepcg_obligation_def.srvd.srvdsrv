@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition For EPCG Obligation Report'
+define service ZEPCG_OBLIGATION_DEF {
+  expose ZEPCG_OBLIGATION_HEAD_CDS as EPCG_HEAD;
+  expose ZEPCG_OBLIGATION_ITEM_CDS as EPCG_Item;
+}

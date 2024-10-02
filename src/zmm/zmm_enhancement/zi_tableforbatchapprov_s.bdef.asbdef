@@ -1,0 +1,76 @@
+managed with additional save implementation in class ZBP_I_TABLEFORBATCHAPPROV_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TableForBatchApprov_S alias TableForBatchAppAll
+draft table ZMBATCH_APPR_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForBatchApprov { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForBatchApprov alias TableForBatchApprov
+persistent table ZMBATCH_APPROVA
+draft table ZMBATCH_APPROV_D
+etag master LocalLastChangedAt
+lock dependent by _TableForBatchAppAll
+authorization dependent by _TableForBatchAppAll
+
+{
+  field ( mandatory : create )
+   Batch,
+   Supplier;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Batch,
+   Supplier;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZMBATCH_APPROVA
+  {
+    Batch = BATCH;
+    Supplier = SUPPLIER;
+    Approved = APPROVED;
+    Kg = kg ;
+    Remark = remark ;
+    Description = description ;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableForBatchAppAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

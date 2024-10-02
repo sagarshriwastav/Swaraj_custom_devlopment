@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORUSERIDAUTHO {
+  expose ZC_TABLEFORUSERIDAUTHO_S as TableForUserIdAuAll;
+  expose ZC_TABLEFORUSERIDAUTHO as TableForUserIdAutho;
+}

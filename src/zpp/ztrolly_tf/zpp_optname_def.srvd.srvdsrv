@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def for Trolly Treansfer Screen  Fof OptName'
+define service ZPP_OPTNAME_DEF {
+  expose ZPP_OPTNAME_CDS1 as OPTNAME;
+}

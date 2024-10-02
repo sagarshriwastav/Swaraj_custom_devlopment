@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Def for Quality Final'
+define service ZPP_QUALITY_FIN_DEF {
+  expose ZPP_QUALITY_CDS             as Qas_Fin;
+  expose ZPP_QM_CODE_CDS             as Qm_Code;
+  expose ZQM_FINAL_QUALITY_HEADINFO  as HdInfoQuality;
+  expose ZPP_QUALITY_INSP_CDS_CHANGE as QualityTesting;
+  expose I_Plant                     as Plant;
+  expose I_StorageLocation           as Sloc;
+}

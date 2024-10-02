@@ -1,0 +1,26 @@
+managed implementation in class zbp_bom_mcp_cds unique;
+strict;
+
+define behavior for zbom_mcp_CDS
+persistent table zbom_mcp
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+mapping for zbom_mcp
+    {
+      werks = Werks;
+      fromdate = From_Date;
+      todate = To_Date;
+      unit_field = unit_field;
+      warpqty = Warp_Qty;
+      weftqty = Weft_Qty;
+      selvedgeqty = Selvedge_Qty;
+	
+}
+
+}

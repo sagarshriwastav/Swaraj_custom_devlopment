@@ -1,0 +1,33 @@
+managed implementation in class zbp_agent_tab_cds unique;
+strict ( 2 );
+
+define behavior for ZAGENT_TAB_cds //alias <alias_name>
+persistent table zagent_tab
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zagent_tab
+    {
+      Agentcode           = agentcode;
+      Agentname           = agentname;
+      Billingdocumentdate = billingdocumentdate;
+      Invoicenumber       = invoicenumber;
+      Partycode           = partycode;
+      Partyname           = partyname;
+      Netamount           = netamount;
+      Taxes               = taxes;
+      Agentcommpre        = agentcommpre;
+      Mamount             = mamount;
+      Mtotalamunt         = mtotalamunt;
+      Incomminginvno      = incomminginvno;
+      Approve             = approve;
+      Bill_qty            = bill_qty;
+      Vandor_inv          = vandor_inv;
+      Reject              = reject;
+      Return_flag         = return_flag;
+    }
+}

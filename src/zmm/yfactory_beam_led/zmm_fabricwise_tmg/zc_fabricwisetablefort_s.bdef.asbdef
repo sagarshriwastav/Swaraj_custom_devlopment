@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_FabricWiseTableForT_S alias FabricWiseTableFAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _FabricWiseTableForT { create; with draft; }
+}
+
+define behavior for ZC_FabricWiseTableForT alias FabricWiseTableForT
+
+{
+  use update;
+  use delete;
+
+  use association _FabricWiseTableFAll { with draft; }
+}

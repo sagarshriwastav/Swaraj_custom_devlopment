@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For Dyed Dispatch Subcon Module Pool'
+define service ZMM_DYED_DISPATCH_SUBCON_DEF {
+  expose ZMM_DYED_DISPATCH as DyedDispatch;
+}

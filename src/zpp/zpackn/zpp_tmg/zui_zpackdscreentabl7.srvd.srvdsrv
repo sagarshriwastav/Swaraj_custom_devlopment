@@ -1,0 +1,4 @@
+define service ZUI_ZPACKDSCREENTABL7 {
+  expose ZC_ZPACKDGRAD_S as ZpackdScreeGRAD;
+  expose ZC_ZPACKDGRADTABLE as ZpackdGRADTable;
+}

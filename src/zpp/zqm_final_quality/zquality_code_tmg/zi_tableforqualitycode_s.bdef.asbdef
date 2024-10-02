@@ -1,0 +1,70 @@
+managed with additional save implementation in class ZBP_I_TABLEFORQUALITYCODE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TableForQualityCode_S alias TableForQualityCAll
+draft table ZQM_CODE_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForQualityCode { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForQualityCode alias TableForQualityCode
+persistent table ZQM_CODE
+draft table ZQM_CODE_D
+etag master LocalLastChangedAt
+lock dependent by _TableForQualityCAll
+authorization dependent by _TableForQualityCAll
+
+{
+  field ( mandatory : create )
+   Serialno;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Serialno;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZQM_CODE
+  {
+    Serialno = SERIALNO;
+    Zparameter = ZPARAMETER;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableForQualityCAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

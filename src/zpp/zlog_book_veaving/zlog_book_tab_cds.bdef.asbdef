@@ -1,0 +1,25 @@
+managed implementation in class zbp_log_book_tab_cds unique;
+strict ( 2 );
+
+define behavior for ZLOG_BOOK_TAB_CDS //alias <alias_name>
+persistent table zlog_book_tab
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zlog_book_tab{
+    Date1 = date1;
+    UnitName = unitname;
+    LoomNumber = loomnumber;
+    SortNumber = sortnumber;
+    RPM_A_Shift = rpm_a_shift;
+    Efficiency_A_ShiftPer = efficiency_a_shiftper;
+    RPM_B_Shift = rpm_b_shift;
+    Efficiency_B_ShiftPer = efficiency_b_shiftper;
+    Production_A_Shift = production_a_shift;
+    Production_B_Shift = production_b_shift;
+  }
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'Agent'
+define service ZAGENT_COMM_SER {
+  expose ZAGENT_COMM_CDS;
+  expose ZAGENT_CODE        as Agent_CodeSER;
+  expose ZAGENT_COMM_return as AGENT_return;
+}

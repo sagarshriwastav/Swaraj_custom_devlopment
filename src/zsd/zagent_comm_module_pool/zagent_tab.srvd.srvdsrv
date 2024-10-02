@@ -1,0 +1,5 @@
+@EndUserText.label: 'Agent'
+define service ZAGENT_TAB {
+  expose ZAGENT_TAB_PROJ;
+  expose ZAGENT_CODE     as Agent_CodeSER;
+}

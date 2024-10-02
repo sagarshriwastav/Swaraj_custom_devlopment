@@ -1,0 +1,85 @@
+managed with additional save implementation in class ZBP_I_ZSALESPOLICTAB_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZsalesPolicTab_S alias ZsalesPolicTabAll
+draft table ZSALES_POLIC_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZsalesPolicTab { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZsalesPolicTab alias ZsalesPolicTab
+persistent table ZSALES_POLIC_TAB
+draft table zsales_polic_t_d
+etag master Locallastchangedat
+lock dependent by _ZsalesPolicTabAll
+authorization dependent by _ZsalesPolicTabAll
+
+{
+  field ( mandatory : create )
+   Plant,
+   Policyno,
+   Nameofpolicyprovider,
+   Policystartdate,
+   Policycoverageperiod,
+   Policyrenweldate;
+
+  field ( readonly )
+   SingletonID,
+   Localcreatedby,
+   Localcreatedat,
+   Locallastchangedby,
+   Locallastchangedat,
+   Lastchangedat;
+
+  field ( readonly : update )
+   Plant,
+   Policyno,
+   Nameofpolicyprovider,
+   Policystartdate,
+   Policycoverageperiod,
+   Policyrenweldate;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZSALES_POLIC_TAB
+  {
+    Plant = PLANT;
+    Policyno = POLICYNO;
+    Nameofpolicyprovider = NAMEOFPOLICYPROVIDER;
+    Policystartdate = POLICYSTARTDATE;
+    Policycoverageperiod = POLICYCOVERAGEPERIOD;
+    Policyrenweldate = POLICYRENWELDATE;
+    Policycoverageamount = POLICYCOVERAGEAMOUNT;
+    Localcreatedby = LOCALCREATEDBY;
+    Localcreatedat = LOCALCREATEDAT;
+    Locallastchangedby = LOCALLASTCHANGEDBY;
+    Locallastchangedat = LOCALLASTCHANGEDAT;
+    Lastchangedat = LASTCHANGEDAT;
+  }
+
+  association _ZsalesPolicTabAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

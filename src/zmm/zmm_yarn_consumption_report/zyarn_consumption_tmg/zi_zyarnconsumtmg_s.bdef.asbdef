@@ -1,0 +1,75 @@
+managed with additional save implementation in class ZBP_I_ZYARNCONSUMTMG_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZyarnConsumTmg_S alias ZyarnConsumTmgAll
+draft table ZYARN_CONSUM_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZyarnConsumTmg { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZyarnConsumTmg alias ZyarnConsumTmg
+persistent table ZYARN_CONSUM_TMG
+draft table ZYARN_CONSUM_T_D
+etag master Locallastchangedat
+lock dependent by _ZyarnConsumTmgAll
+authorization dependent by _ZyarnConsumTmgAll
+
+{
+  field ( mandatory : create )
+   Fabric,
+   Yarn,
+   Pick;
+
+  field ( readonly )
+   SingletonID,
+   Localcreatedby,
+   Localcreatedat,
+   Locallastchangedby,
+   Locallastchangedat,
+   Lastchangedat;
+
+  field ( readonly : update )
+   Fabric,
+   Yarn,
+   Pick;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZYARN_CONSUM_TMG
+  {
+    Fabric = FABRIC;
+    Yarn = YARN;
+    Pick = PICK;
+    Localcreatedby = LOCALCREATEDBY;
+    Localcreatedat = LOCALCREATEDAT;
+    Locallastchangedby = LOCALLASTCHANGEDBY;
+    Locallastchangedat = LOCALLASTCHANGEDAT;
+    Lastchangedat = LASTCHANGEDAT;
+  }
+
+  association _ZyarnConsumTmgAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

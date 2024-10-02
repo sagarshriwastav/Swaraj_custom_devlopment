@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_TableForWarpBeamTmg_S alias TableForWarpBeamAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _TableForWarpBeamTmg { create; with draft; }
+}
+
+define behavior for ZC_TableForWarpBeamTmg alias TableForWarpBeamTmg
+
+{
+  use update;
+  use delete;
+
+  use association _TableForWarpBeamAll { with draft; }
+}

@@ -1,0 +1,4 @@
+define service ZUI_IDWISEAUTH {
+  expose ZC_IDWISEAUTH_S as IdWiseAuAll;
+  expose ZC_IDWISEAUTH as IdWiseAuth;
+}

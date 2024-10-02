@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain ZAUTHORIZATION TABLE",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_ZAUTHORIZATIONTABLE_O4",
+    "serviceName": "ZUI_ZAUTHORIZATIONTABLE_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "ZauthorizationTaAll",
+    "name": "ZAUTHORIZATION TABLE",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "ZauthorizationTaAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "ZauthorizationTable",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "creationRow"
+      }
+    ]
+  }
+}

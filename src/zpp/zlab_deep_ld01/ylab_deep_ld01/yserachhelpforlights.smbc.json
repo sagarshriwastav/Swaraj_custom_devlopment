@@ -1,0 +1,38 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain SERACH HELP FOR LIGHT SOURCE",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "YUI_SERACHHELPFORLIGHTS_O4",
+    "serviceName": "YUI_SERACHHELPFORLIGHTS_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "SerachHelpForLigAll",
+    "name": "SERACH HELP FOR LIGHT SOURCE",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "SerachHelpForLigAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "SerachHelpForLightS",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

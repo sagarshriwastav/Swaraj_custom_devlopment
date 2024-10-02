@@ -1,0 +1,175 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ModuelpoolReportTab', 
+    typeNamePlural: 'ModuelpoolReportTabs', 
+    title: {
+      type: #STANDARD, 
+      label: 'MODUELPOOL REPORT TABLE', 
+      value: 'Sno'
+    }
+  }
+}
+annotate view ZI_ModuelpoolReportTab with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Sno'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Sno'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ModuelpoolReportTab', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'MODUELPOOL REPORT TABLE', 
+    position: 1 
+  } ]
+  Sno;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'RequimentNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'RequimentNo'
+  } ]
+  RequimentNo;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Dates'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Dates'
+  } ]
+  Dates;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'SalesOrder'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'SalesOrder'
+  } ]
+  SalesOrder;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Construction'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Construction'
+  } ]
+  Construction;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'CustomerNames'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'CustomerNames'
+  } ]
+  CustomerNames;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Buyer'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Buyer'
+  } ]
+  Buyer;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    label: 'EndUse'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    label: 'EndUse'
+  } ]
+  EndUse;
+  
+  @UI.identification: [ {
+    position: 9 , 
+    label: 'TestStd'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 , 
+    label: 'TestStd'
+  } ]
+  TestStd;
+  
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'CostRef'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'CostRef'
+  } ]
+  CostRef;
+  
+  @UI.identification: [ {
+    position: 11 , 
+    label: 'ExecutiveName'
+  } ]
+  ExecutiveName;
+  
+  @UI.identification: [ {
+    position: 12 , 
+    label: 'PreparedBy'
+  } ]
+  PreparedBy;
+  
+  @UI.identification: [ {
+    position: 13 , 
+    label: 'LightSourcePrimary'
+  } ]
+  LightSourcePrimary;
+  
+  @UI.identification: [ {
+    position: 14 , 
+    label: 'LightSourceSecondary'
+  } ]
+  LightSourceSecondary;
+  
+  @UI.identification: [ {
+    position: 15 , 
+    label: 'Others'
+  } ]
+  Others;
+  
+  @UI.identification: [ {
+    position: 16 , 
+    label: 'MechanicalFinish'
+  } ]
+  MechanicalFinish;
+  
+  @UI.identification: [ {
+    position: 17 , 
+    label: 'ChemicalFinish'
+  } ]
+  ChemicalFinish;
+  
+  @UI.identification: [ {
+    position: 18 , 
+    label: 'Remark'
+  } ]
+  Remark;
+  
+  @UI.identification: [ {
+    position: 19 , 
+    label: 'ShadeNames'
+  } ]
+  ShadeNames;
+}

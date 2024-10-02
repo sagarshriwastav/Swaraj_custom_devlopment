@@ -1,0 +1,7 @@
+@EndUserText.label: 'zserv_def_4_subcon'
+define service Zserv_def_4_subcon {
+  expose ZSUBCON_tabl2 as table2;
+  expose ZPP_SUBCON_V1 as Beamdetail;
+  expose ZSUBCON_tabl1 as table1;
+  expose ZPP_SUBCON_CDS as Supplier;
+}

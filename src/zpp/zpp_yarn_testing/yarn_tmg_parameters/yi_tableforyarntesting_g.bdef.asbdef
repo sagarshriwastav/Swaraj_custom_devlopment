@@ -1,0 +1,84 @@
+managed with additional save implementation in class YBP_I_TABLEFORYARNTESTING_G unique;
+strict;
+with draft;
+
+define behavior for YI_TableForYarnTesting_G alias TableForYarnTestAll
+draft table YTEST_PARAME_D_G
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForYarnTesting { create ( features : instance ); with draft; }
+}
+
+define behavior for YI_TableForYarnTestingG alias TableForYarnTesting
+persistent table YTEST_PARAMETERS
+draft table YTEST_PARAMETE_G
+etag master LocalLastChangedAt
+lock dependent by _TableForYarnTestAll
+authorization dependent by _TableForYarnTestAll
+
+{
+  field ( mandatory : create )
+   Plant,
+   Srno,
+   Progaram,
+   Progaramno,
+   Progaramname,
+   Parameters;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Plant,
+   Srno,
+   Progaram,
+   Progaramno,
+   Progaramname,
+   Parameters;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for YTEST_PARAMETERS
+  {
+    Plant = PLANT;
+    Srno = SRNO;
+    Progaram = PROGARAM;
+    Progaramno = PROGARAMNO;
+    Progaramname = PROGARAMNAME;
+    Parameters = PARAMETERS;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableForYarnTestAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

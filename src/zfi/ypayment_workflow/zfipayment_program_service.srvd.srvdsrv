@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For  ZFIPAYMENT_PROGRAM'
+define service ZFIPAYMENT_PROGRAM_SERVICE {
+  expose ZFIPAYMENT_PROGRAM;
+}

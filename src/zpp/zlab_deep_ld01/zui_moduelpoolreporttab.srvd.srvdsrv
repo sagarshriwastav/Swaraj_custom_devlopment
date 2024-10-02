@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_ModuelpoolReportTab_S'
+define service ZUI_MODUELPOOLREPORTTAB {
+  expose ZI_MODUELPOOLREPORTTAB_S as ModuelpoolReportAll;
+  expose ZI_MODUELPOOLREPORTTAB as ModuelpoolReportTab;
+}

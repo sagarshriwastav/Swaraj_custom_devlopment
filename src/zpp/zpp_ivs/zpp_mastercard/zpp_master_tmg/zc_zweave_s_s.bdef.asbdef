@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_ZWEAVE_S_S alias TabelForMasterCaAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _ZWEAVE_S { create; with draft; }
+}
+
+define behavior for ZC_ZWEAVE_S alias ZWEAVE_S
+
+{
+  use update;
+  use delete;
+
+  use association _TabelForMasterCaAll { with draft; }
+}

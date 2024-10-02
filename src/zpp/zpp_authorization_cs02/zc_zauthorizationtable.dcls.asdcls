@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_ZauthorizationTable {
+  grant select on ZC_ZauthorizationTable
+  where INHERITING CONDITIONS FROM ENTITY ZI_ZauthorizationTable;
+}

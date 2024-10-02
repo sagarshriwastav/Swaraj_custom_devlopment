@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_ZsalesPolicTab {
+  grant select on ZC_ZsalesPolicTab
+  where INHERITING CONDITIONS FROM ENTITY ZI_ZsalesPolicTab;
+}

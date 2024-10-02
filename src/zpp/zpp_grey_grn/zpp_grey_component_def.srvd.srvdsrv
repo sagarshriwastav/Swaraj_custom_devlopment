@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service Def for Grey Component $ Grn'
+define service ZPP_GREY_COMPONENT_DEF {
+  expose ZPP_GREY_GRN_CDS      as GREY_GRN;
+  expose ZPP_Grey_Component    as GREY_COMPONENT;
+  expose ZPP_GOODS101          as ZPP_GOODS101;
+  expose zoperator_table       as OPTNAME;
+  expose ZPP_CHEAKBEAM         as CheckPiece;
+  expose ZPP_SELVEDGE_F4_cds   as Selvedge;
+  expose ZPP_BEAM_PROGRAM_CHNG as BeamProgram;
+}

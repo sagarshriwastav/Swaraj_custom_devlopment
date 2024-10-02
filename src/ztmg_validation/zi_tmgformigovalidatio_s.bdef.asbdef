@@ -1,0 +1,84 @@
+managed with additional save implementation in class ZBP_I_TMGFORMIGOVALIDATIO_S unique;
+strict;
+with draft;
+define behavior for ZI_TmgForMigovalidatio_S alias TmgForMigovalidaAll
+draft table ZTMG_MIGO_V_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   HideTransport,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TmgForMigovalidatio { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TmgForMigovalidatio alias TmgForMigovalidatio
+persistent table ZTMG_MIGO_VALIDA
+draft table ZTMG_MIGO_VAL_D
+etag master LastChangedAt
+lock dependent by _TmgForMigovalidaAll
+authorization dependent by _TmgForMigovalidaAll
+
+{
+  field ( mandatory : create )
+   SrNo;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   SrNo;
+
+  field ( notrigger )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZTMG_MIGO_VALIDA
+  {
+    SrNo = SR_NO;
+    Username = USERNAME;
+     userid  = USER_ID;
+      remark = REMARK;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _TmgForMigovalidaAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

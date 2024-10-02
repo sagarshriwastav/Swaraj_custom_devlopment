@@ -1,0 +1,35 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain MAINTAIN STOCK TMG",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_MAINTAINSTOCKTMG_O4",
+    "serviceName": "ZUI_MAINTAINSTOCKTMG_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "MaintainStockTmgAll",
+    "name": "MAINTAIN STOCK TMG",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "MaintainStockTmgAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "MaintainStockTmg",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true
+      }
+    ]
+  }
+}

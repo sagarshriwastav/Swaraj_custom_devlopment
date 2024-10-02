@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_ZinvTmgTable_S alias ZinvTmgTableAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _ZinvTmgTable { create; with draft; }
+}
+
+define behavior for ZC_ZinvTmgTable alias ZinvTmgTable
+
+{
+  use update;
+  use delete;
+
+  use association _ZinvTmgTableAll { with draft; }
+}

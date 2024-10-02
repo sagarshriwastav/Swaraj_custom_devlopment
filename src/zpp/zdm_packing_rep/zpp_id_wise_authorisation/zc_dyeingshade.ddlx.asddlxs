@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'DyeingShade', 
+    typeNamePlural: 'DyeingShades', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Dyeing Shade Tmg', 
+      value: 'Srno'
+    }
+  }
+}
+annotate view ZC_DyeingShade with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Srno'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Srno'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_DyeingShade', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Dyeing Shade Tmg', 
+    position: 1 
+  } ]
+  Srno;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Dyeingshade'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Dyeingshade'
+  } ]
+  Dyeingshade;
+  
+   @UI.identification: [ {
+    position: 3 , 
+    label: 'Dyeingshade'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'dyeindesc'
+  } ]
+  dyeindesc;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LocalLastChangedAt;
+}

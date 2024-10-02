@@ -1,0 +1,41 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'MaintainStockTmg', 
+    typeNamePlural: 'MaintainStockTmgs', 
+    title: {
+      type: #STANDARD, 
+      label: 'MAINTAIN STOCK TMG', 
+      value: 'PartyCode'
+    }
+  }
+}
+annotate view ZI_MaintainStockTmg with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'PartyCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'PartyCode'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_MaintainStockTmg', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'MAINTAIN STOCK TMG', 
+    position: 1 
+  } ]
+  PartyCode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'OpeningBalance'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'OpeningBalance'
+  } ]
+  OpeningBalance;
+}

@@ -1,0 +1,76 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZepcgObligation', 
+    typeNamePlural: 'ZepcgObligations', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZEPCG OBLIGATION', 
+      value: 'EpcgLicenseNo'
+    }
+  }
+}
+annotate view ZC_ZepcgObligation with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'EpcgLicenseNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'EpcgLicenseNo'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZepcgObligation', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZEPCG OBLIGATION', 
+    position: 1 
+  } ]
+  EpcgLicenseNo;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'ValidFrom'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'ValidFrom'
+  } ]
+  ValidFrom;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'ValidTo'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'ValidTo'
+  } ]
+  ValidTo;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'ExportObligation'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'ExportObligation'
+  } ]
+  ExportObligation;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  Localcreatedby;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  Localcreatedat;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  Lastchangedat;
+}

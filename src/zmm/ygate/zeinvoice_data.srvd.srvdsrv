@@ -1,0 +1,4 @@
+@EndUserText.label: 'E invoice  data for billing'
+define service Zeinvoice_data {
+  expose Yeinvoice_cds as billing_print;
+}

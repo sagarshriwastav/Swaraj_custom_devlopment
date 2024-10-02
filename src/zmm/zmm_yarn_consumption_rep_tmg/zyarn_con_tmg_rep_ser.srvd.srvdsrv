@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination for ZYARN_CONSUMPTION_REPORT_TMG'
+define service ZYARN_CON_TMG_REP_SER {
+  expose ZYARN_CON_REP_TMG_CDS;
+}

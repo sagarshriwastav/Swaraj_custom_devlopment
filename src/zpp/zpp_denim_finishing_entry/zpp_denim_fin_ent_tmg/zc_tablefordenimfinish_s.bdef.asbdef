@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_TableForDenimFinish_S alias TableForDenimFinAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _TableForDenimFinish { create; with draft; }
+}
+
+define behavior for ZC_TableForDenimFinish alias TableForDenimFinish
+
+{
+  use update;
+  use delete;
+
+  use association _TableForDenimFinAll { with draft; }
+}

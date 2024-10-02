@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition  For Z_VENDOR_CDS'
+define service Z_VENDOR_SR {
+  expose Z_VENDOR_CDS;
+  expose zfi_acc_group as Account_group_tot;
+}

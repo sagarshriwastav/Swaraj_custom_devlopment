@@ -1,0 +1,4 @@
+define service ZUI_ZYARNCONSUMTMG {
+  expose ZC_ZyarnConsumTmg   as ZyarnConsumTmg;
+  expose ZC_ZyarnConsumTmg_S as ZyarnConsumTmgall;
+}

@@ -1,0 +1,85 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TabelForFinishQuali', 
+    typeNamePlural: 'DM SORTMASTER', 
+    title: {
+      type: #STANDARD, 
+      label: 'Tabel For Finish Quality Tmg', 
+      value: 'Parentsort'
+    }
+  }
+}
+annotate view ZC_TabelForFinishQuali with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Parentsort'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Parentsort'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TabelForFinishQuali', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Tabel For Finish Quality Tmg', 
+    position: 1 
+  } ]
+  Parentsort;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Finwd'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Finwd'
+  } ]
+  Finwd;
+  
+  @Consumption.valueHelpDefinition: [ {
+  
+    entity: {
+      name: 'I_UnitOfMeasure', 
+      element: 'UnitOfMeasure'
+    }
+  } ]
+    Unit;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Weight'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Weight'
+  } ]
+  Weight;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position:  8
+  } ]
+  LastChangedAt;
+}

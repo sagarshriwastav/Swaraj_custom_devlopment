@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE_DEFINATION FOR REQUEST CDS'
+define service ZSERVICE_DEFINATION_REQUEST {
+  expose ZREQUEST_CDS;
+}

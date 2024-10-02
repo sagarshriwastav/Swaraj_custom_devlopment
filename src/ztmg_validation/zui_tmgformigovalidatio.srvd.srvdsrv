@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TmgForMigovalidatio_S'
+define service ZUI_TMGFORMIGOVALIDATIO {
+  expose ZI_TMGFORMIGOVALIDATIO_S as TmgForMigovalidaAll;
+  expose ZI_TMGFORMIGOVALIDATIO as TmgForMigovalidatio;
+}

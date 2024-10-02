@@ -1,0 +1,37 @@
+managed implementation in class zbp_pc_selvedge_cds unique;
+strict ( 1 );
+
+define behavior for ZPC_SELVEDGE_CDS //ali= <ali=_name>
+persistent table zpc_selvedge
+lock master
+authorization master ( instance )
+//etag m=ter <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zpc_selvedge
+     {
+    zpno = Zpno;
+    zpmsno = Zpmsno;
+  //  zsalign = Zsalign;
+    zpmtype = Zpmtype;
+    zpmcountsys = Zpmcountsys;
+    rescnt = Rescnt;
+    zpmyqlty = Zpmyqlty;
+    maktx = Maktx;
+    shaft = Shaft;
+    dent = Dent;
+    dent1 = Dent1;
+    ends = Ends;
+    repeats = Repeats;
+    mul = Mul;
+    totalends = Totalends;
+    pmdesc = Pmdesc;
+    shades = Shades;
+    mark = Mark;
+    wpmtr = Wpmtr;
+    icon = Icon;
+    center = Center;
+    }
+}

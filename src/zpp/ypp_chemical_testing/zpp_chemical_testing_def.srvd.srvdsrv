@@ -1,0 +1,9 @@
+@EndUserText.label: 'service definition for chemical testing'
+define service ZPP_CHEMICAL_TESTING_DEF {
+  expose ZPP_CHEMICAL_TESTING_CDS      as ChemicalTesting;
+  expose ZPP_CHEMICAL_PARTYBILL        as partybillname;
+  expose ZPP_LOGINID                   as loginid;
+  expose ZPP_CHEMICAL_TESTING_HEAD_CDS as ChemicalHeadTesting;
+  expose ZPP_CHEMICAL_TESTTAB2_CDS     as ChemicalItemTesting;
+  expose YPP_CHEMICAL_TESTING_CDS      as chemicalparameter;
+}

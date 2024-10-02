@@ -1,0 +1,4 @@
+@EndUserText.label: 'Account Group And User Id Check'
+define service ZACCOUNT_USER_SERVICE {
+  expose zaccount_userid_porj as Account_Group_And_UserId;
+}

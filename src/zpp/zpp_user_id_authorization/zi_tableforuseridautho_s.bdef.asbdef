@@ -1,0 +1,73 @@
+managed with additional save implementation in class ZBP_I_TABLEFORUSERIDAUTHO_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TableForUserIdAutho_S alias TableForUserIdAuAll
+draft table ZPP_USER_TAB_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForUserIdAutho { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForUserIdAutho alias TableForUserIdAutho
+persistent table ZPP_USER_TABLE
+draft table ZPP_USER_TABLE_D
+etag master LocalLastChangedAt
+lock dependent by _TableForUserIdAuAll
+authorization dependent by _TableForUserIdAuAll
+
+{
+  field ( mandatory : create )
+   Username,
+   Password;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Username,
+   Password;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZPP_USER_TABLE
+  {
+    Username = USERNAME;
+    Password = PASSWORD;
+    mattpye   =  mattpye;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableForUserIdAuAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

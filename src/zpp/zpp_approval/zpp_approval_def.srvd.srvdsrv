@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition For Approval Pp Program'
+define service ZPP_APPROVAL_DEF {
+  expose ZPP_APPROVAL        as Setnumber;
+  expose ZPP_APPROVAL_CDS    as changeapproval;
+  expose ZPP_DYEING_APPROVAL as TECHO;
+}

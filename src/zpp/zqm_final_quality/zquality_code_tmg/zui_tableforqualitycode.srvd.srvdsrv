@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORQUALITYCODE {
+  expose ZC_TABLEFORQUALITYCODE_S as TableForQualityCAll;
+  expose ZC_TABLEFORQUALITYCODE as TableForQualityCode;
+}

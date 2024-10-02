@@ -1,0 +1,70 @@
+managed with additional save implementation in class ZBP_I_ZWEAVE_CARDS_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZWEAVE_S_S alias TabelForMasterCaAll
+draft table ZWEAVE_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZWEAVE_S { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZWEAVE_S alias ZWEAVE_S
+persistent table ZWEAVE
+draft table ZWEAVE_D
+etag master LocalLastChangedAt
+lock dependent by _TabelForMasterCaAll
+authorization dependent by _TabelForMasterCaAll
+
+{
+  field ( mandatory : create )
+   Weavecode;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Weavecode;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZWEAVE
+  {
+    Weavecode = WEAVECODE;
+    Weavedes = WEAVEDES;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TabelForMasterCaAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

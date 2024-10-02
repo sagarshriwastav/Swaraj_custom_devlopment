@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for YC_TableForYarnTesting_G alias TableForYarnTestAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _TableForYarnTesting { create; with draft; }
+}
+
+define behavior for YC_TableForYarnTestingG alias TableForYarnTesting
+
+{
+  use update;
+  use delete;
+
+  use association _TableForYarnTestAll { with draft; }
+}

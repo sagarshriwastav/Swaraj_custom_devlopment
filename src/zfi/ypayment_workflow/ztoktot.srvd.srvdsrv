@@ -1,0 +1,4 @@
+@EndUserText.label: 'Token Total Amount'
+define service Ztoktot {
+  expose Ztokentot as Ztokentot;
+}

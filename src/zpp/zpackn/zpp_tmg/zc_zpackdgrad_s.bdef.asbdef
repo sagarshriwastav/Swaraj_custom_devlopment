@@ -1,0 +1,27 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_ZpackdGRAD_S alias ZpackdScreeGRAD
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _ZpackdGRADTable { create; with draft; }
+}
+
+define behavior for ZC_ZpackdGRADTable alias ZpackdGRADTable
+
+{
+  use update;
+  use delete;
+
+  use action CopyZpackdGRADTable;
+
+  use association _ZpackdScreeGRAD { with draft; }
+}

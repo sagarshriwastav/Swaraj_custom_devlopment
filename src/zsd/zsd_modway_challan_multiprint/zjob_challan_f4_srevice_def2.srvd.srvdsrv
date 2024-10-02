@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZJOB_CHALLAN_F4_Srevice_Def2'
+define service ZJOB_CHALLAN_F4_Srevice_Def2 {
+  expose ZSD_CHALLAN_PRINT_F4_CDS2;
+  expose ZPP_CHEMICAL_TESTING_CDS  as ChemicalTesting;
+}

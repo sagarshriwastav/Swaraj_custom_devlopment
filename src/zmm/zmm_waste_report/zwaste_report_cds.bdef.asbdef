@@ -1,0 +1,49 @@
+managed implementation in class zbp_waste_report_cds unique;
+strict ( 2 );
+
+define behavior for ZWASTE_REPORT_CDS //alias <alias_name>
+persistent table zmm_waste_table
+//etag master LastChangedAt
+lock master
+authorization master (  instance )
+//etag master <field_name>
+{  // field ( mandatory : create )
+//posting_date,
+// Setno,
+// SheetWeight,
+// SizedWaste,
+// Sortno,
+// TotalWaste,
+// UnsizedWaste,
+//  WarpingLengthInMtr,
+//  waste ;
+//
+//  field ( readonly )
+//   CreatedAt,
+//   CreatedBy,
+//   LocalLastChangedAt,
+//   LastChangedAt,
+//   LastChangedBy;
+  create;
+  update;
+  delete;
+//  determination zdeter_m1 on save { create; }
+
+mapping for zmm_waste_table
+{
+posting_date = zdate ;
+ Setno = setno;
+ SheetWeight = sheet_weight;
+ SizedWaste = sized_waste;
+ Sortno = sortno;
+ TotalWaste = total_waste;
+ UnsizedWaste = unsized_waste;
+ WarpingLengthInMtr = warping_length_in_mtr;
+ Waste = waste;
+CreatedBy = created_by;
+CreatedAt = created_at;
+LastChangedBy = last_changed_by;
+LastChangedAt = last_changed_at;
+LocalLastChangedAt = local_last_changed_at;
+}
+}

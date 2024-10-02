@@ -1,0 +1,27 @@
+@EndUserText.label: 'ZMASTER CARD SERVICE DEF'
+define service ZMASTER_CARD_SERVICE_DEF {
+  expose zbom_mcp_PROJ           as ZBOM_MCP;
+  expose ZPC_HEADERMASTER_PROJ   as ZPC_HEADERMASTER;
+  expose zpc_monogram_PROJ       as ZPC_MONOGRAM;
+  expose zpc_number_range_PROJ   as zpc_number_range;
+  expose zpc_warpmatch1_proj     as zpc_warpmatch1;
+  expose zpc_warpmatching_proj   as zpc_warpmatching;
+  expose zpc_warppattern_proj    as zpc_warppattern;
+  expose zqcd_proj               as zqcd;
+  expose I_Plant                 as PlantData;
+  expose ZPC_DRAFTPEGPLAN_PROJ   as ZPC_DRAFTPEGPLAN;
+  expose ZPC_SELVEDGE_PROJ       as ZPC_SELVEDGE;
+  expose ZPP_MAT_DES_CDS         as MAT_DES;
+  expose ZPP_WEAVE_CDS           as WEAVE_CODE_DES;
+  expose ZPP_MAT_DES_YARN_CDS    as YARN_DES;
+  expose ZPP_WEFT_DES            as Weft_DES;
+  expose ZPP_MAT_DES_DYESORT_CDS as DYESORT;
+  expose ZLOOM_TYPE_CDS          as LOOM_TYPE;
+  expose ZPP_MAT_DES_FG          as Mat_Des_FG;
+  expose ZPP_MAT_DES_PD          as Mat_Des_PD;
+  expose ZPP_HEADER_SUPPLIER_F4  as Supplier;
+  expose ZPP_DYEING_SHADE_TMG    as DyeingShadeTmg;
+  expose ZPP_PD_SORT             as PdSortf4;
+  expose ZPP_MASTERCARD_MAT_F4   as ChangeQualityF4;
+  expose ZPP_SORTMASTER_CDS      as ZPP_SORTMASTER_CDS;
+}

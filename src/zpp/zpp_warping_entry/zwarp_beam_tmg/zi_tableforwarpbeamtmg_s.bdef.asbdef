@@ -1,0 +1,74 @@
+managed with additional save implementation in class ZBP_I_TABLEFORWARPBEAMTMG_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TableForWarpBeamTmg_S alias TableForWarpBeamAll
+draft table ZWARP_BEAM_T_1_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForWarpBeamTmg { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForWarpBeamTmg alias TableForWarpBeamTmg
+persistent table ZWARP_BEAM_TMG
+draft table ZWARP_BEAM_TMG_1
+etag master LocalLastChangedAt
+lock dependent by _TableForWarpBeamAll
+authorization dependent by _TableForWarpBeamAll
+
+{
+  field ( mandatory : create )
+   Plant,
+   Beamno;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Plant,
+   Beamno;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZWARP_BEAM_TMG
+  {
+    Plant = PLANT;
+    Beamno = BEAMNO;
+    Beamwt = BEAMWT;
+    Remark = REMARK;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TableForWarpBeamAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

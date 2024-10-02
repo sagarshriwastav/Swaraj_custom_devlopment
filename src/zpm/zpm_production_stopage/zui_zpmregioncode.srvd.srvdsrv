@@ -1,0 +1,4 @@
+define service ZUI_ZPMREGIONCODE {
+  expose ZC_ZPMREGIONCODE_S as ZpmRegionCodeAll;
+  expose ZC_ZPMREGIONCODE as ZpmRegionCode;
+}

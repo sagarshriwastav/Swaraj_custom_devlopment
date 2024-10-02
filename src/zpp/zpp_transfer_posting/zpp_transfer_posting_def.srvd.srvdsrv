@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition For Transfer Posting'
+define service ZPP_TRANSFER_POSTING_DEF {
+  expose ZPP_TRANSFER_POSTING_CDS;
+  expose ZPP_TRANSFER_POSTING_PLANT_F4 as PLANTF4;
+  expose ZPP_TRANSFER_POSTING_SLOC_F4 as Sloc;
+}

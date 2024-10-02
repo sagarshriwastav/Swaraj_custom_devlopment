@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination for z543_approvel'
+define service Z543_approvel {
+  expose Z543_APPROVEL_CDS;
+}

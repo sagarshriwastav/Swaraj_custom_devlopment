@@ -1,0 +1,82 @@
+managed with additional save implementation in class ZBP_I_ZSDUSERTMGTAB_S unique;
+strict;
+with draft;
+define behavior for ZI_ZsdUserTmgTab_S alias ZsdUserTmgTabAll
+draft table ZSD_USER_TM_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   HideTransport,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZsdUserTmgTab { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZsdUserTmgTab alias ZsdUserTmgTab
+persistent table ZSD_USER_TMG_TAB
+draft table ZSD_USER_TMG__D
+etag master LocalLastChangedAt
+lock dependent by _ZsdUserTmgTabAll
+authorization dependent by _ZsdUserTmgTabAll
+
+{
+  field ( mandatory : create )
+   Zuserid;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Zuserid;
+
+  field ( notrigger )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZSD_USER_TMG_TAB
+  {
+    Zuserid = ZUSERID;
+    Username = USERNAME;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ZsdUserTmgTabAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

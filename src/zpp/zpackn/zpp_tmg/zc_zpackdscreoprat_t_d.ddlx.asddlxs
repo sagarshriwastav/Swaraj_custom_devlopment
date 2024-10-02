@@ -1,0 +1,101 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZpackScreenOPRAT_T_', 
+    typeNamePlural: 'ZpackScreenOPRAT_T_s', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZPACKD SCREEN TABLE', 
+      value: 'Bukrs'
+    }
+  }
+}
+annotate view ZC_ZpackdScreOPRAT_T_D with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Bukrs'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Bukrs'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyZpackScreenOPRAT_T_', 
+    label: 'Copy Selected Entry'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZpOPRAT_T_Dable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZPACKD SCREEN TABLE', 
+    position: 1 
+  } ]
+  Bukrs;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Empcode'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Empcode'
+  } ]
+  Empcode;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Empname'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Empname'
+  } ]
+  Empname;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Deptname'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Deptname'
+  } ]
+  Deptname;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Cancel'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Cancel'
+  } ]
+  Cancel;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  LastChangedAt;
+}

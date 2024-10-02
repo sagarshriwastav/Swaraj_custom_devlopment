@@ -1,0 +1,9 @@
+projection;
+strict ( 1 );
+
+define behavior for zaccount_userid_porj //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+}

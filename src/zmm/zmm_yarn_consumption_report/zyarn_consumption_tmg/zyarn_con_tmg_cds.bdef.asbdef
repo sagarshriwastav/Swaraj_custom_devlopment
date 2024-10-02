@@ -1,0 +1,19 @@
+managed implementation in class zbp_yarn_con_tmg_cds unique;
+strict ( 2 );
+
+define behavior for ZYARN_CON_TMG_CDS //alias <alias_name>
+persistent table zyarn_con_tmg
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zyarn_con_tmg
+    {
+      Fabric  = fabric;
+      Pick    = pick;
+      Yarn    = yarn;
+    }
+}

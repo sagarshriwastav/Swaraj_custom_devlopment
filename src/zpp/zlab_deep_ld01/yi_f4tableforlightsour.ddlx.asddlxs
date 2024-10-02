@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'F4TableForLightSour', 
+    typeNamePlural: 'F4TableForLightSours', 
+    title: {
+      type: #STANDARD, 
+      label: 'F4 TABLE FOR LIGHT SOURCE', 
+      value: 'Srno'
+    }
+  }
+}
+annotate view YI_F4TableForLightSour with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Srno'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Srno'
+  } ]
+  @UI.facet: [ {
+    id: 'YI_F4TableForLightSour', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'F4 TABLE FOR LIGHT SOURCE', 
+    position: 1 
+  } ]
+  Srno;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'SourceCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'SourceCode'
+  } ]
+  SourceCode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Finish'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Finish'
+  } ]
+  Finish;
+}

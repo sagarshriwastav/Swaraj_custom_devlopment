@@ -1,0 +1,4 @@
+@EndUserText.label: 'Invoice'
+define service ZYINVOICE_1 {
+  expose Yeinvoice_cds;
+}

@@ -1,0 +1,91 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZpackdGRADTable', 
+    typeNamePlural: 'ZpackdGRADTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZPACKD SCREEN TABLE', 
+      value: 'Werks'
+    }
+  }
+}
+annotate view ZC_ZpackdGRADTable with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Werks'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Werks'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyZpackdGRADTable', 
+    label: 'Copy Selected Entry'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZGRADScreenTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZPACKD SCREEN TABLE', 
+    position: 1 
+  } ]
+  Werks;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Prctr'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Prctr'
+  } ]
+  Prctr;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Grade'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Grade'
+  } ]
+  Grade;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Zdesc'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Zdesc'
+  } ]
+  Zdesc;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Zsnro'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Zsnro'
+  } ]
+  Zsnro;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LastChangedAt;
+}

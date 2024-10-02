@@ -1,0 +1,75 @@
+managed with additional save implementation in class ZBP_I_QUALITYCODE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_QualityCode_S alias QualityCodeAll
+draft table ZQCD_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _QualityCode { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_QualityCode alias QualityCode
+persistent table ZQCD
+draft table ZQCD_D
+etag master LocalLastChangedAt
+lock dependent by _QualityCodeAll
+authorization dependent by _QualityCodeAll
+
+{
+  field ( mandatory : create )
+   Cbcode;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Cbcode;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZQCD
+  {
+    Cbcode = CBCODE;
+    Cgcode = CGCODE;
+    Rescnt = RESCNT;
+    Maktx = MAKTX;
+    Waste = WASTE;
+    Erdat = ERDAT;
+    Ernam = ERNAM;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _QualityCodeAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

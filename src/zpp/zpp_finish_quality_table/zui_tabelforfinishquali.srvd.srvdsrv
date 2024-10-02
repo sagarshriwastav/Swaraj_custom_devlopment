@@ -1,0 +1,4 @@
+define service ZUI_TABELFORFINISHQUALI {
+  expose ZC_TABELFORFINISHQUALI_S as TabelForFinishQuAll;
+  expose ZC_TABELFORFINISHQUALI as TabelForFinishQuali;
+}

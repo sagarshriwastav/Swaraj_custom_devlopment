@@ -1,0 +1,4 @@
+define service ZUI_ZWEAVE_CARDS {
+  expose ZC_ZWEAVE_S_S as TabelForMasterCaAll;
+  expose ZC_ZWEAVE_S as ZWEAVE_S;
+}

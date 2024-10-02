@@ -1,0 +1,29 @@
+managed implementation in class zbp_pc_draftpegplan_cds unique;
+strict ( 1 );
+
+define behavior for ZPC_DRAFTPEGPLAN_CDS //alias <alias_name>
+persistent table zpc_draftpegplan
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for  zpc_draftpegplan
+     {
+    zpno = Zpno;
+    pmgroup = Pmgroup;
+    ptype = Ptype;
+    zpmsno = Zpmsno;
+    pmdesc = Pmdesc;
+    mul = Mul;
+    repeats = Repeats;
+  //  mark = Mark;
+  //  repeats1 = Repeats1;
+  //  mul1 = Mul1;
+    remark = Remark;
+
+       }
+
+}

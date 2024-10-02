@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'AuthorizationTmg', 
+    typeNamePlural: 'AuthorizationTmgs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Authorization TMG', 
+      value: 'Profitcenter'
+    }
+  }
+}
+annotate view ZI_AuthorizationTmg with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Profitcenter'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Profitcenter'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_AuthorizationTmg', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Authorization TMG', 
+    position: 1 
+  } ]
+  Profitcenter;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Cbuser'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Cbuser'
+  } ]
+  Cbuser;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Itemtext'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Itemtext'
+  } ]
+  Itemtext;
+}

@@ -1,0 +1,39 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZsdUserTmgTab', 
+    typeNamePlural: 'ZsdUserTmgTabs', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZSD_USER_TMG_TAB', 
+      value: 'Zuserid'
+    }
+  }
+}
+annotate view ZI_ZsdUserTmgTab with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZsdUserTmgTab', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZSD_USER_TMG_TAB', 
+    position: 1 
+  } ]
+  Zuserid;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Username'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Username'
+  } ]
+  Username;
+}

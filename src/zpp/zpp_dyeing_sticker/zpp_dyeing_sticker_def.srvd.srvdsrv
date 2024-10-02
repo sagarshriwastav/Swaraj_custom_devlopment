@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition For Dyeing Sticker'
+define service ZPP_DYEING_STICKER_DEF {
+  expose ZPP_DYEING_STICKER as MatF4;
+  expose ZPP_PLANT_DYEING as PlantF4;
+}

@@ -1,0 +1,4 @@
+define service ZUI_ZPACKDSCREENTA_OPRA {
+  expose ZC_ZPACKDSCREENOP_1 as ZpackdScreenTab121;
+  expose ZC_ZPACKDSCREOPRAT_T_D as ZpackScreenOPRAT_T_;
+}

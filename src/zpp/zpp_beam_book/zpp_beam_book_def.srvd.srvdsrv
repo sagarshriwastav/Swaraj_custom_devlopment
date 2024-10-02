@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Beam Book Report'
+define service ZPP_BEAM_BOOK_DEF {
+  expose ZPP_BEAM_BOOK_CDS as DetailedReport;
+}

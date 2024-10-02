@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForBatchApprov', 
+    typeNamePlural: 'TableForBatchApprovs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Batch Approval', 
+      value: 'Batch'
+    }
+  }
+}
+annotate view ZC_TableForBatchApprov with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Batch'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Batch'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForBatchApprov', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Batch Approval', 
+    position: 1 
+  } ]
+  Batch;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Supplier'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Supplier'
+  } ]
+  Supplier;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Approved'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Approved'
+  } ]
+  Approved;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LastChangedAt;
+}

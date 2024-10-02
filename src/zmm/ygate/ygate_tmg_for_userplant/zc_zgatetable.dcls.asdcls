@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_ZgateTable {
+  grant select on ZC_ZgateTable
+  where INHERITING CONDITIONS FROM ENTITY ZI_ZgateTable;
+}

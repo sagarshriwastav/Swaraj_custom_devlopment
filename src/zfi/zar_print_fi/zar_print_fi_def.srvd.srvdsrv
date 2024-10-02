@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition For AR Print Report'
+define service ZAR_PRINT_FI_DEF {
+  expose ZAR_PRINT_FI_CDS        as Customer;
+  expose ZAR_PRINT__AGENT_FI_CDS as Agent;
+  expose ZAR_DIVISION_F4         as DivisionF4;
+}

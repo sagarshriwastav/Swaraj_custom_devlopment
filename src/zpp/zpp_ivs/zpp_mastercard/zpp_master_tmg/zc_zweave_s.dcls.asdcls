@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_ZWEAVE_S {
+  grant select on ZC_ZWEAVE_S
+  where INHERITING CONDITIONS FROM ENTITY ZI_ZWEAVE_S;
+}

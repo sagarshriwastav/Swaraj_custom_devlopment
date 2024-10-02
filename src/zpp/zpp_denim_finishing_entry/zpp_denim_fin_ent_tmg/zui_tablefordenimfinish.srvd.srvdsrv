@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORDENIMFINISH {
+  expose ZC_TABLEFORDENIMFINISH_S as TableForDenimFinAll;
+  expose ZC_TABLEFORDENIMFINISH as TableForDenimFinish;
+}

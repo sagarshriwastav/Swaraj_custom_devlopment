@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZWASTE_REPORT_SERVICE DEFINITION'
+define service ZWASTE_REPORT_DEF {
+  expose ZWASTE_REPORT_CDS;
+}

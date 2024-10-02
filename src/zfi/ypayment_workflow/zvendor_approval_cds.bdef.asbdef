@@ -1,0 +1,36 @@
+managed implementation in class zbp_vendor_approval_cds unique;
+strict ( 2 );
+
+define behavior for ZVENDOR_APPROVAL_CDS //alias <alias_name>
+persistent table yvendor_approve
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+    mapping for  yvendor_approve
+    {
+      Accountingdocument     = accountingdocument;
+      Companycode            = companycode;
+       Fiscalyear             = fiscalyear;
+      Journalentrydate       = journalentrydate;
+      Journalentrytype       = journalentrytype;
+      Duedays                = duedays;
+      Specialjournalindictor = specialjournalindictor;
+      Amount                 = amount;
+      Reftext                = reftext;
+      Invoicereference       = invoicereference;
+      Paymentterms           = paymentterms;
+      Request                = request;
+       overduedays            = overduedays;
+        Approvalchecking     =    approvalchecking ;
+       Supplier               = supplier;
+      Suppliername           = suppliername;
+
+
+
+    }
+}

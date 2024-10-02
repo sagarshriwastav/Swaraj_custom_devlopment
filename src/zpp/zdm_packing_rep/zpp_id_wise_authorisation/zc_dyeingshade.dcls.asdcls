@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_DyeingShade {
+  grant select on ZC_DyeingShade
+  where INHERITING CONDITIONS FROM ENTITY ZI_DyeingShade;
+}

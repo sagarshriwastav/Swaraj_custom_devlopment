@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For Zauto Bom'
+define service ZAUTO_BOM_V2_DEF {
+  expose ZAUTO_BOM_V2 as Auto_Bom;
+}

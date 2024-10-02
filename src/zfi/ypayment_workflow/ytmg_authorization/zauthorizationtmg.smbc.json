@@ -1,0 +1,35 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain Authorization TMG",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_AUTHORIZATIONTMG_O4",
+    "serviceName": "ZUI_AUTHORIZATIONTMG_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "AuthorizationTmgAll",
+    "name": "Authorization TMG",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "AuthorizationTmgAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "AuthorizationTmg",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true
+      }
+    ]
+  }
+}

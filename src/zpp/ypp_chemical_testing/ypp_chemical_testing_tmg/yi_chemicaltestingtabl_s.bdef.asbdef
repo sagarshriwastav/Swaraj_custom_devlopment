@@ -1,0 +1,84 @@
+managed with additional save implementation in class YBP_I_CHEMICALTESTINGTABL_S unique;
+strict;
+with draft;
+
+define behavior for YI_ChemicalTestingTabl_S alias ChemicalTestingTAll
+draft table YCHEMICL_PRA_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ChemicalTestingTabl { create ( features : instance ); with draft; }
+}
+
+define behavior for YI_ChemicalTestingTabl alias ChemicalTestingTabl
+persistent table YCHEMICL_PRAMETR
+draft table YCHEMICL_PRAME_D
+etag master LocalLastChangedAt
+lock dependent by _ChemicalTestingTAll
+authorization dependent by _ChemicalTestingTAll
+
+{
+  field ( mandatory : create )
+   Plant,
+   Srno,
+   Progaram,
+   Progaramno,
+   Progaramname,
+   Parameters;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Plant,
+   Srno,
+   Progaram,
+   Progaramno,
+   Progaramname,
+   Parameters;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for YCHEMICL_PRAMETR
+  {
+    Plant = PLANT;
+    Srno = SRNO;
+    Progaram = PROGARAM;
+    Progaramno = PROGARAMNO;
+    Progaramname = PROGARAMNAME;
+    Parameters = PARAMETERS;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ChemicalTestingTAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

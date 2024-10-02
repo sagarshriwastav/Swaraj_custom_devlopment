@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_TabelForFinishQuali {
+  grant select on ZC_TabelForFinishQuali
+  where INHERITING CONDITIONS FROM ENTITY ZI_TabelForFinishQuali;
+}

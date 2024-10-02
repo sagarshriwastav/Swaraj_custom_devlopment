@@ -1,0 +1,7 @@
+@EndUserText.label: 'ZPM_PRODUCTION_STOPAGE'
+define service ZPM_PRODUCTION_STOPAGE {
+  expose ZPM_PRODTN_STOPAGE;
+  expose I_Plant            as PlantData;
+  expose ZPM_PRODUCTION_MAC as MACHINENO;
+  expose ZPM_REASON_CODE    as ReasonCode;
+}

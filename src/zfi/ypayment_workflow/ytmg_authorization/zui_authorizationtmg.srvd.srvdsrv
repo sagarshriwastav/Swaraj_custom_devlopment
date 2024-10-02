@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_AuthorizationTmg_S'
+define service ZUI_AUTHORIZATIONTMG {
+  expose ZI_AuthorizationTmg_S as AuthorizationTmgAll;
+  expose ZI_AuthorizationTmg   as AuthorizationTmg;
+}

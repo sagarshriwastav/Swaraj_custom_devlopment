@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Yarn Consumption Report'
+define service ZMM_YARN_CONSUMPTION_DEF {
+  expose ZMM_YARN_CONSUMPTION_RESPONSE as FinalTable;
+}

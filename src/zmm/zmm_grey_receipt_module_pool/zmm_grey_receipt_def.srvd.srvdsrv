@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service Definition For Grey Receipt Module Pool Screen'
+define service ZMM_GREY_RECEIPT_DEF {
+  expose ZMM_GREY_RECEIPT_CDS2          as GreyReceipt;
+  expose ZMM_GREY_RECEIPT_COMPONENT_CDS as GreyComponent;
+  expose ZMM_GREY_STOCK_CDS1            as GreyStock;
+  expose ZMM_GREY_RECEIPT_CHECK         as PieceChek;
+  expose I_Supplier                     as Supplier;
+  expose ZPP_GREY_RECEIPT_PEICE_FATCH   as piecelength;
+  expose zyarn_Pick_Read                as YarnPickReadSpace;
+}

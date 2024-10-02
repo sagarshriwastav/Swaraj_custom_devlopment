@@ -1,0 +1,7 @@
+@EndUserText.label: 'Sevice Defination For Dyes Checmical Component Details'
+define service ZPP_DYEC_SERV {
+  expose ZDYEC_SET_COMPOV1 as ordermat;
+  expose ZDYEC_RECIPE_NO_F4 as ZDYEC_RECIPE_NO_F4;
+  expose ZDYEC_SET_COMPONENT as ZDYEC_SET_COMPONENT;
+  expose ZPP_STOCKQTY_CDS as ConsStockQty;
+}

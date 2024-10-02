@@ -1,0 +1,4 @@
+@EndUserText.label: 'Account Group Wise Total'
+define service ZFI_ACC_GROUP {
+  expose zfi_acc_group;
+}

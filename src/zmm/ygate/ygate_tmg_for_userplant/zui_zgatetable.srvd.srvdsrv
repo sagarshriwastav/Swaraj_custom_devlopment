@@ -1,0 +1,4 @@
+define service ZUI_ZGATETABLE {
+  expose ZC_ZGATETABLE_S as ZgateTableAll;
+  expose ZC_ZGATETABLE as ZgateTable;
+}

@@ -1,0 +1,111 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZpackdScreenTable', 
+    typeNamePlural: 'ZpackdScreenTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZPACKD SCREEN TABLE', 
+      value: 'Code'
+    }
+  }
+}
+annotate view ZC_ZpackdScreenTable with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Code'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyZpackdScreenTable', 
+    label: 'Copy Selected Entry'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZpackdScreenTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZPACKD SCREEN TABLE', 
+    position: 1 
+  } ]
+  Code;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  Description;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Farea'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Farea'
+  } ]
+  Farea;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Ftype'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Ftype'
+  } ]
+  Ftype;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Fname'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Fname'
+  } ]
+  Fname;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Deptno'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Deptno'
+  } ]
+  Deptno;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Zdept'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Zdept'
+  } ]
+  Zdept;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  LastChangedAt;
+}

@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForLoomTypeTmg', 
+    typeNamePlural: 'TableForLoomTypeTmgs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Loom Type  Tmg', 
+      value: 'Serialno'
+    }
+  }
+}
+annotate view ZC_TableForLoomTypeTmg with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Serialno'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Serialno'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForLoomTypeTmg', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Loom Type  Tmg', 
+    position: 1 
+  } ]
+  Serialno;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Loomtype'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Loomtype'
+  } ]
+  Loomtype;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LastChangedAt;
+}

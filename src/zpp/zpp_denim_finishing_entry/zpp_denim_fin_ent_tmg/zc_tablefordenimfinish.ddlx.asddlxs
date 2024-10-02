@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForDenimFinish', 
+    typeNamePlural: 'TableForDenimFinishs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Denim Finishing Entry Tmg', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_TableForDenimFinish with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForDenimFinish', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Denim Finishing Entry Tmg', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Route'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Route'
+  } ]
+  Route;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LastChangedAt;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sales policy service definitions'
+define service ZSALES_POLICY_DEF {
+  expose ZSALES_POLICY_HEAD_CDS as SALESPOLICY_HEAD;
+  expose ZSALES_POLICY_ITEM_CDS as SALES_ITEM;
+}

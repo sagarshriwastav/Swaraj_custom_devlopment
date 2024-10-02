@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Job Sales Order Print'
+define service ZSD_JOB_SALES_ORDER_PRINT_DEF {
+  expose ZSD_JOB_SALES_ORDER_PRINT as F4SALESDOCUMENT;
+}

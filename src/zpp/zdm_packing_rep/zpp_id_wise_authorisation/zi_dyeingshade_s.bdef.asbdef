@@ -1,0 +1,73 @@
+managed with additional save implementation in class ZBP_I_DYEINGSHADE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_DyeingShade_S alias DyeingShAll
+draft table ZPP_DYE_SHAD_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _DyeingShade { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_DyeingShade alias DyeingShade
+persistent table ZPP_DYE_SHAD_TMG
+draft table ZPP_DYE_SHAD_T_D
+etag master LastChangedAt
+lock dependent by _DyeingShAll
+authorization dependent by _DyeingShAll
+
+{
+  field ( mandatory : create )
+   Srno,
+   Dyeingshade;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   Srno,
+   Dyeingshade;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZPP_DYE_SHAD_TMG
+  {
+    Srno = SRNO;
+    Dyeingshade = DYEINGSHADE;
+    dyeindesc   = dyeindesc;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _DyeingShAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

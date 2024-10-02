@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Definition For Finish Entry'
+define service ZPP_FINISH_ENTRY_DEF {
+  expose ZPP_FINISH_ENTRY as FinishEntry;
+  expose ZPP_FINISH_ENTRY_STOCK_1 as FinishStock;
+  expose ZPP_DENIM_ROUTE as Route;
+  expose YPLANT_4 as plant;
+  expose zoperator_table as operatorName;
+  expose ZStorageLocation_cds as StorageLocation;
+}

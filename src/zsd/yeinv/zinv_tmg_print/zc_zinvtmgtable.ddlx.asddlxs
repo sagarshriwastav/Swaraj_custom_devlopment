@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZinvTmgTable', 
+    typeNamePlural: 'ZinvTmgTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZINV TMG TABLE', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_ZinvTmgTable with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZinvTmgTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZINV TMG TABLE', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Policyname'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Policyname'
+  } ]
+  Policyname;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Policynumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Policynumber'
+  } ]
+  Policynumber;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LastChangedAt;
+}

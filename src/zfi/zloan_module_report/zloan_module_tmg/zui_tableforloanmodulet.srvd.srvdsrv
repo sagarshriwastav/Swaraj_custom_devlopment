@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForLoanModuleT_S'
+define service ZUI_TABLEFORLOANMODULET {
+  expose ZI_TABLEFORLOANMODULET_S as TableForLoanModuAll;
+  expose ZI_TABLEFORLOANMODULET as TableForLoanModuleT;
+}

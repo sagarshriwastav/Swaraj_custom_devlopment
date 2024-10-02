@@ -1,0 +1,4 @@
+define service ZUI_DYEINGSHADE {
+  expose ZC_DYEINGSHADE_S as DyeingShAll;
+  expose ZC_DYEINGSHADE as DyeingShade;
+}

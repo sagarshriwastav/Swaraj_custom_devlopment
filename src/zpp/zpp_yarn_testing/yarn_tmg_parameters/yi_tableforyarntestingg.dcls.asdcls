@@ -1,0 +1,5 @@
+@MappingRole: true
+define role YI_TableForYarnTestingG {
+  grant select on YI_TableForYarnTestingG
+  where ( ) = ASPECT pfcg_auth ( 'S_TABU_NAM', ACTVT = '03', TABLE = 'YI_TABLEFORYARNTESTINGG' );
+}

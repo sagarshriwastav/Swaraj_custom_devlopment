@@ -1,0 +1,4 @@
+@EndUserText.label: 'PP_INSPECTION_SUMMRY service'
+define service ZPP_INSPECTION_SUMMRY_ser {
+  expose ZINSPECTION_SUMMRY_fINAL;
+}

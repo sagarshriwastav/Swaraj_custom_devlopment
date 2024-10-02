@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZWASTE_REPORT_DEF_PROJ'
+define service ZWASTE_REPORT_DEF_PROJ {
+  expose ZMM_WASTE_CDS_PROJ;
+}

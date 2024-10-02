@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORBATCHAPPROV {
+  expose ZC_TABLEFORBATCHAPPROV_S as TableForBatchAppAll;
+  expose ZC_TABLEFORBATCHAPPROV as TableForBatchApprov;
+}

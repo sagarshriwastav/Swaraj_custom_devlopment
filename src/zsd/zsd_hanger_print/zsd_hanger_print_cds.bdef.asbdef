@@ -1,0 +1,23 @@
+managed implementation in class zbp_sd_hanger_print_cds unique;
+strict ( 2 );
+
+define behavior for ZSD_HANGER_PRINT_CDS //alias <alias_name>
+persistent table zsd_hanger_tab
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zsd_hanger_tab {
+  Style = style;
+  Yarnspun = yarnspun;
+  Width = width;
+  Weight = weight;
+  Shade = shade;
+  Weave = weave;
+  Weftsnkg = weftsnkg;
+  Finshtype = finshtype;
+  }
+}

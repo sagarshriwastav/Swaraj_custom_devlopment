@@ -1,0 +1,76 @@
+managed with additional save implementation in class ZBP_I_ZEPCGOBLIGATION_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZepcgObligation_S alias ZepcgObligationAll
+draft table ZEPCG_OBLIGA_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZepcgObligation { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZepcgObligation alias ZepcgObligation
+persistent table ZEPCG_OBLIGATION
+draft table ZEPCG_OBLIGATI_D
+etag master Locallastchangedat
+lock dependent by _ZepcgObligationAll
+authorization dependent by _ZepcgObligationAll
+
+{
+  field ( mandatory : create )
+   EpcgLicenseNo,
+   ValidFrom,
+   ValidTo;
+
+  field ( readonly )
+   SingletonID,
+   Localcreatedby,
+   Localcreatedat,
+   Locallastchangedby,
+   Locallastchangedat,
+   Lastchangedat;
+
+  field ( readonly : update )
+   EpcgLicenseNo,
+   ValidFrom,
+   ValidTo;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZEPCG_OBLIGATION
+  {
+    EpcgLicenseNo = EPCG_LICENSE_NO;
+    ValidFrom = VALID_FROM;
+    ValidTo = VALID_TO;
+    ExportObligation = EXPORT_OBLIGATION;
+    Localcreatedby = LOCALCREATEDBY;
+    Localcreatedat = LOCALCREATEDAT;
+    Locallastchangedby = LOCALLASTCHANGEDBY;
+    Locallastchangedat = LOCALLASTCHANGEDAT;
+    Lastchangedat = LASTCHANGEDAT;
+  }
+
+  association _ZepcgObligationAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

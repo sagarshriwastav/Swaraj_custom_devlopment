@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For LoomCard Print'
+define service ZPP_CARD_STICKER_DEF {
+  expose ZPP_LOOMCARD_CDS as CardStickerF4;
+}

@@ -1,0 +1,4 @@
+define service ZUI_ZAUTHORIZATIONTABLE {
+  expose ZC_ZAUTHORIZATIONTABLE_S as ZauthorizationTaAll;
+  expose ZC_ZAUTHORIZATIONTABLE as ZauthorizationTable;
+}

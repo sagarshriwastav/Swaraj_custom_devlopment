@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For Ledger Print'
+define service ZFI_GL_CODE_DEF {
+  expose ZFI_GL_CODE as GLCODE;
+}

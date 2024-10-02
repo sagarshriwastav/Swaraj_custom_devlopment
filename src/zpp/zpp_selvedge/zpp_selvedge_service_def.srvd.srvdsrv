@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Def For Selvedge Screen'
+define service ZPP_SELVEDGE_SERVICE_DEF {
+  expose ZPP_SELVEDGE_CDS as SELVEDGE_MAIN;
+  expose ZPP_SELVEDGE_PLANT_F4 as PlantF4;
+  expose ZPP_SELVEDGE_CHANGE as ChangeSelvedge;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZPP_FOLDING_CDS FOR DEFINITION'
+define service ZPP_FOLDING_CDS_DEF {
+  expose ZPP_FOLDING_CDS;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain chemical testing table for tmg",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "YUI_CHEMICALTESTINGTABL_O4",
+    "serviceName": "YUI_CHEMICALTESTINGTABL_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "ChemicalTestingTAll",
+    "name": "chemical testing table for tmg",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "ChemicalTestingTAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "ChemicalTestingTabl",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "creationRow"
+      }
+    ]
+  }
+}

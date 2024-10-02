@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'FabricWiseTableForT', 
+    typeNamePlural: 'FabricWiseTableForTs', 
+    title: {
+      type: #STANDARD, 
+      label: 'fabric wise table for tmg', 
+      value: 'Material'
+    }
+  }
+}
+annotate view ZC_FabricWiseTableForT with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Material'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Material'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_FabricWiseTableForT', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'fabric wise table for tmg', 
+    position: 1 
+  } ]
+  Material;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Wastegpersantage'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Wastegpersantage'
+  } ]
+  Wastegpersantage;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LastChangedAt;
+}

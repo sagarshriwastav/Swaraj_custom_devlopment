@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Def For Yafn Factory Beam Led Print'
+define service ZMM_FACTORY_BEAM_LED_PRINT_DEF {
+  expose I_Customer          as CUSTOMER;
+  expose I_Plant             as Plant;
+  expose ZFABRIC_WASTAGE_CDS as FabricWiseWastage;
+}

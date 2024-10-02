@@ -1,0 +1,4 @@
+define service ZUI_QUALITYCODE {
+  expose ZC_QUALITYCODE_S as QualityCodeAll;
+  expose ZC_QUALITYCODE as QualityCode;
+}

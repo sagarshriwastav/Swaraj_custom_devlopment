@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain MODUELPOOL REPORT TABLE",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_MODUELPOOLREPORTTAB_O4",
+    "serviceName": "ZUI_MODUELPOOLREPORTTAB_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "ModuelpoolReportAll",
+    "name": "MODUELPOOL REPORT TABLE",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "ModuelpoolReportAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "ModuelpoolReportTab",
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1
+      }
+    ]
+  }
+}

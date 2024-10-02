@@ -1,0 +1,70 @@
+managed with additional save implementation in class ZBP_I_ZAUTHORIZATIONTABLE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZauthorizationTable_S alias ZauthorizationTaAll
+draft table ZAUTH_TABLE_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZauthorizationTable { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZauthorizationTable alias ZauthorizationTable
+persistent table ZAUTH_TABLE
+draft table ZAUTH_TABLE_D
+etag master LocalLastChangedAt
+lock dependent by _ZauthorizationTaAll
+authorization dependent by _ZauthorizationTaAll
+
+{
+  field ( mandatory : create )
+   Username;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Username;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZAUTH_TABLE
+  {
+    Username = USERNAME;
+    Sno = SNO;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ZauthorizationTaAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

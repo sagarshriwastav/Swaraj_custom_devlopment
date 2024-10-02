@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'ZC_STOCK_MAINTAN001', 
+    typeNamePlural: 'ZC_STOCK_MAINTAN001s'
+  }
+}
+annotate view ZC_STOCK_MAINTAN001 with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZC_STOCK_MAINTAN001', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'PartyCode'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'PartyCode'
+  } ]
+  PartyCode;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'OpeningBalance'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'OpeningBalance'
+  } ]
+  OpeningBalance;
+  
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def For MasterCard Print'
+define service ZPP_MASTERCARD_PRIINT_DEF {
+  expose ZPP_MASTERCARD_PRINT_CDS as MasterNo;
+}

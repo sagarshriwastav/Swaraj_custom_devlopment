@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_LabDeepReportTable_S'
+define service ZUI_LABDEEPREPORTTABLE {
+  expose ZI_LABDEEPREPORTTABLE_S as LabDeepReportTabAll;
+  expose ZI_LABDEEPREPORTTABLE as LabDeepReportTable;
+}

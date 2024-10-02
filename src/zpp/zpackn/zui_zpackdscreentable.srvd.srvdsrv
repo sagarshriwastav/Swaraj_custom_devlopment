@@ -1,0 +1,4 @@
+define service ZUI_ZPACKDSCREENTABLE {
+  expose ZC_ZPACKDSCREENTABLE_S as ZpackdScreenTablAll;
+  expose ZC_ZPACKDSCREENTABLE as ZpackdScreenTable;
+}

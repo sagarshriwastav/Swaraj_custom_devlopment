@@ -1,0 +1,4 @@
+define service ZUI_FABRICWISETABLEFORT {
+  expose ZC_FABRICWISETABLEFORT_S as FabricWiseTableFAll;
+  expose ZC_FABRICWISETABLEFORT as FabricWiseTableForT;
+}

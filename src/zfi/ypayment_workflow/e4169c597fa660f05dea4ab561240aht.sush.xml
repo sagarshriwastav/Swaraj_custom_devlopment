@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSH" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <HEAD>
+    <NAME>E4169C597FA660F05DEA4AB561240A</NAME>
+    <TYPE>HT</TYPE>
+    <DISPLAY_NAME>R3TR IWSG Z_VENDOR_BI_0001</DISPLAY_NAME>
+    <DEVCLASS>YPAYMENT_WORKFLOW</DEVCLASS>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </HEAD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

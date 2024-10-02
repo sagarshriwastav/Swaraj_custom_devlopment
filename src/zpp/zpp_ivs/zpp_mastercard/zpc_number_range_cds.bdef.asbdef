@@ -1,0 +1,20 @@
+managed implementation in class zbp_pc_number_range_cds unique;
+strict;
+
+define behavior for zpc_number_range_cds //alias <alias_name>
+persistent table zpc_number_range
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  mapping for zpc_number_range
+  {
+      werks = Werks;
+      zpbrand = Zpbrand;
+      curzpno = Curzpno;
+}
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def for Denim Shade'
+define service ZPP_DNMSHADE_SERVICE_DEF {
+  expose ZPP_SHADE_GRP_CDS as FETCHDNMDATA;
+}

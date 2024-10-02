@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>BADI_IMPL</TOOL>
+   <SHORTTEXT>Delivery Check Badi</SHORTTEXT>
+   <SPOT_NAME>ES_LE_SHP_EXTEND</SPOT_NAME>
+   <IMPL>
+    <ENH_BADI_IMPL_DATA>
+     <SPOT_NAME>ES_LE_SHP_EXTEND</SPOT_NAME>
+     <BADI_NAME>LE_SHP_DELIVERY_FINAL_CHECK</BADI_NAME>
+     <IMPL_NAME>ZLE_SHP_DELIVERY_FINAL_CHECK</IMPL_NAME>
+     <IMPL_CLASS>ZDELIVERY_ENHANCEMENT_CLASS</IMPL_CLASS>
+     <ACTIVE>X</ACTIVE>
+     <IMPL_SHORTTEXT>Check Badi</IMPL_SHORTTEXT>
+     <LOCKED_IN_CUSTOMIZING>X</LOCKED_IN_CUSTOMIZING>
+    </ENH_BADI_IMPL_DATA>
+   </IMPL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

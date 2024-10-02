@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Def For Trolly Transfer Screen'
+define service ZTROLLY_TF_DEF {
+  expose ZTROLLY_TF_CDS as Ztrolly;
+  expose zoperator_table as OPTNAME;
+  expose I_StorageLocation as storage_loc1;
+  expose ZPP_TROLLY_SET_NO_F4_1 as Set_No;
+}

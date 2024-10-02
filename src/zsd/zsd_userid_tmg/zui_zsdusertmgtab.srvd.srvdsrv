@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_ZsdUserTmgTab_S'
+define service ZUI_ZSDUSERTMGTAB {
+  expose ZI_ZSDUSERTMGTAB_S as ZsdUserTmgTabAll;
+  expose ZI_ZSDUSERTMGTAB as ZsdUserTmgTab;
+}

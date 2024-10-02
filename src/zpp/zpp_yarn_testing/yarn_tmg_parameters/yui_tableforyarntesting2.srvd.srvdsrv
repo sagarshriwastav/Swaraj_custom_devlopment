@@ -1,0 +1,4 @@
+define service YUI_TABLEFORYARNTESTING2 {
+  expose YC_TABLEFORYARNTESTING_G as TableForYarnTestAll;
+  expose YC_TABLEFORYARNTESTINGG as TableForYarnTesting;
+}

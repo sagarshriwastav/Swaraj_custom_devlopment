@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVIES DEFINITION FOR FINAL CDS'
+define service ZMM_GREY_SHORT_CDD_FINAL_DEF {
+  expose ZMM_GREY_SORT_CDS_FINAL;
+}

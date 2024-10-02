@@ -1,0 +1,41 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForMaterialWis', 
+    typeNamePlural: 'TableForMaterialWiss', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Material Wise Tmg Fi', 
+      value: 'Material'
+    }
+  }
+}
+annotate view ZC_TableForMaterialWis with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Material'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Material'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForMaterialWis', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Material Wise Tmg Fi', 
+    position: 1 
+  } ]
+  Material;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Description'
+  } ]
+  Description;
+}

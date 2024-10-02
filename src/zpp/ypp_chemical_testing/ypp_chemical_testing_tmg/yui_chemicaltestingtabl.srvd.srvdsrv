@@ -1,0 +1,5 @@
+define service YUI_CHEMICALTESTINGTABL {
+  expose YC_ChemicalTestingTabl_S as ChemicalTestingTAll;
+  expose YC_ChemicalTestingTabl   as ChemicalTestingTabl;
+  expose YPP_CHEMICAL_TESTING_CDS as YPP_CHEMICAL_TESTING_CD;
+}

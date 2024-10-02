@@ -1,0 +1,6 @@
+@EndUserText.label: 'yarnpack_serd'
+define service Yarnpack_serd {
+  expose Yarn_packcds as yarnpack_;
+  expose YPLANT_YPACK as PLANT;
+  expose YPP_ORDERCOMPONENT as ORDERCOMPONENT;
+}

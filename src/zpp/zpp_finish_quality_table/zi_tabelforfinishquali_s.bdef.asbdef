@@ -1,0 +1,75 @@
+managed with additional save implementation in class ZBP_I_TABELFORFINISHQUALI_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TabelForFinishQuali_S alias TabelForFinishQuAll
+draft table ZDM_SORTMAST_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TabelForFinishQuali { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TabelForFinishQuali alias TabelForFinishQuali
+persistent table ZDM_SORTMASTER
+draft table ZDM_SORTMASTER_D
+etag master LocalLastChangedAt
+lock dependent by _TabelForFinishQuAll
+authorization dependent by _TabelForFinishQuAll
+
+{
+  field ( mandatory : create )
+   Parentsort,
+   Plant;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Parentsort,
+   Plant;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZDM_SORTMASTER
+  {
+    Parentsort = PARENTSORT;
+    Plant = PLANT;
+    Finwd = FINWD;
+    Unit = UNIT;
+    Weight = WEIGHT;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _TabelForFinishQuAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

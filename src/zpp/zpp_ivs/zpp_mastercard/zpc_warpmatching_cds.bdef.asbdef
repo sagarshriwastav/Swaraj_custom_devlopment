@@ -1,0 +1,21 @@
+managed implementation in class zbp_pc_warpmatching_cds unique;
+strict;
+
+define behavior for zpc_warpmatching_cds //alias <alias_name>
+persistent table zpc_warpmatching
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  mapping for zpc_warpmatching
+  {
+    zpno = Zpno;
+    zmatch = Zmatch;
+    zpmsno = Zpmsno;
+}
+
+}

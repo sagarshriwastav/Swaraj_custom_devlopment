@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_IdWiseAuth {
+  grant select on ZC_IdWiseAuth
+  where INHERITING CONDITIONS FROM ENTITY ZI_IdWiseAuth;
+}

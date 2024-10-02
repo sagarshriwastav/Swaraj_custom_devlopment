@@ -1,0 +1,93 @@
+@Metadata.layer: #PARTNER
+
+  @UI : {  headerInfo: { typeName: 'ZDNM_SER',
+                         typeNamePlural: 'ZDNM_SER',
+                         title: { type: #STANDARD , label: 'ZDNM_SER' , value: 'Werks'  }
+                         } 
+                         }
+annotate view ZDNM_SER
+    with 
+    {
+      @UI : {  lineItem: [{ position: 10, label: 'PLANT' }],
+             identification: [{ position: 10, label: 'PLANT' }] 
+             }
+  Werks;
+  
+     @UI : {  lineItem: [{ position: 20, label: 'Machine Number' }],
+             identification: [{ position: 20, label: 'Machine Number' }] 
+             }
+  ZmcNo;
+       @UI : {  lineItem: [{ position: 30, label: 'ZsetNo Number' }],
+             identification: [{ position: 30, label: 'ZsetNo Number' }] 
+             }
+  ZsetNo;
+  
+       @UI : {  lineItem: [{ position: 40, label: 'ZfsetNo' }],
+             identification: [{ position: 40, label: 'ZfsetNo' }] 
+             }
+  ZfsetNo;
+  
+       @UI : {  lineItem: [{ position: 50, label: 'ZsetStd' }],
+             identification: [{ position: 50, label: 'ZsetStd' }] 
+             }
+  ZsetStd;
+  
+  
+
+  
+  
+  
+       @UI : {  lineItem: [{ position: 60, label: 'UnitField1' }],
+             identification: [{ position: 60, label: 'UnitField1' }] 
+             }
+  UnitField1;
+  
+  
+       @UI : {  lineItem: [{ position: 70, label: 'Zlength' }],
+             identification: [{ position: 70, label: 'Zlength' }] 
+             }
+    Zlength;
+    
+    
+    
+         @UI : {  lineItem: [{ position: 80, label: 'ZfnDate' }],
+             identification: [{ position: 80, label: 'ZfnDate' }] 
+             }
+  ZfnDate;
+  
+       @UI : {  lineItem: [{ position: 90, label: 'ZfnDate1' }],
+             identification: [{ position: 90, label: 'ZfnDate1' }] 
+             }
+  ZfnDate1;
+  
+  
+       @UI : {  lineItem: [{ position: 100, label: 'ZfnTime' }],
+             identification: [{ position: 100, label: 'ZfnTime' }] 
+             }
+  ZfnTime;
+  
+      @UI : {  lineItem: [{ position: 110, label: 'mat_des' }],
+             identification: [{ position: 110, label: 'mat_des' }] 
+             }
+  mat_des;
+  
+  
+       @UI : {  lineItem: [{ position: 120, label: 'material' }],
+             identification: [{ position: 120, label: 'material' }] 
+             }
+  material;
+  
+         @UI : {  lineItem: [{ position: 130, label: 'UnitField' }],
+             identification: [{ position: 130, label: 'UnitField' }] 
+             }
+  UnitField;
+  
+       @UI : {  lineItem: [{ position: 140, label: 'LastChangedAt' }],
+             identification: [{ position: 140, label: 'LastChangedAt' }] 
+             }
+  LastChangedAt;
+  
+
+    
+    
+}

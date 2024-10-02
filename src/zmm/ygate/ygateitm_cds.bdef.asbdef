@@ -1,0 +1,54 @@
+managed implementation in class Ybp_gateitm_cds unique;
+strict ( 2 );
+
+define behavior for YGATEITM_CDS //alias <alias_name>
+persistent table YGATEITEM1
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+   mapping for Ygateitem1
+ {
+   Gateno  = gateno;
+   GateItem = gate_item;
+   Lifnr   = lifnr;
+   Matnr  = matnr;
+   Ebeln = ebeln;
+   Ebelp = ebelp ;
+  Mblnr  = mblnr;
+Zeile = zeile ;
+Delievery =  delievery;
+Posnr =  posnr ;
+Banfn = banfn ;
+Bnfpo = bnfpo ;
+Maktx = maktx ;
+OrderQty = order_qty ;
+OpenQty = open_qty  ;
+GateQty = gate_qty ;
+OutQty =  out_qty ;
+OutValue = out_value ;
+InQty =  in_qty ;
+InValue = in_value ;
+Uom = uom;
+RsplName = rspl_name ;
+Expdat = expdat ;
+Remark = remark ;
+Zinvoice  = zinvoice;
+name1   = name1;
+ZbagQty  = zbag_qty ;
+Refgateno = refgateno ;
+Refgateit = refgateit ;
+Reject = reject ;
+Lpnum =  lpnum ;
+Lppos = lppos ;
+Sono =  sono ;
+ Soitm =  soitm ;
+ Address1 = address1 ;
+
+
+}
+
+}

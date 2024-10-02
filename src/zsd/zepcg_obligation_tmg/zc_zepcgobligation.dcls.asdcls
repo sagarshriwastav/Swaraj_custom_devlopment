@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZC_ZepcgObligation {
+  grant select on ZC_ZepcgObligation
+  where INHERITING CONDITIONS FROM ENTITY ZI_ZepcgObligation;
+}

@@ -1,0 +1,83 @@
+managed with additional save implementation in class ZBP_I_MAINTAINSTOCKTMG_S unique;
+strict;
+with draft;
+define behavior for ZI_MaintainStockTmg_S alias MaintainStockTmgAll
+draft table ZSTOCK_TMG_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   HideTransport,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _MaintainStockTmg { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_MaintainStockTmg alias MaintainStockTmg
+persistent table ZSTOCK_TMG
+draft table ZSTOCK_TMG_D
+etag master LastChangedAt
+lock dependent by _MaintainStockTmgAll
+authorization dependent by _MaintainStockTmgAll
+
+{
+  field ( mandatory : create )
+   PartyCode;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   PartyCode;
+
+  field ( notrigger )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZSTOCK_TMG
+  {
+    PartyCode = PARTY_CODE;
+    OpeningBalance = OPENING_BALANCE;
+    postingdate   = POSTINGDATE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _MaintainStockTmgAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

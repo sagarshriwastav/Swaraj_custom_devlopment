@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service Def for Dyeing Entry'
+define service ZPP_DYEING_ENTRY_DEF {
+  expose ZPP_DYEING_ENTRY_CDS     as DYEING_DETAIL;
+  expose ZPP_DYEING_ENTRY_CDS1    as COMPONENT;
+  expose ZPP_BEM_MATERIAL_DES_CDS as BeamMatDes;
+  expose ZPP_ZWAWPERMT_CDS        as WawPerMtr;
+  expose zoperator_table          as OPTNAME1;
+  expose ZPP_DYEING_SHADE_CDS     as shadeno;
+  expose ZPP_GREY_SORT_F4         as GreySortF4;
+  expose ZPP_BEAM_NUMBER_CHECK    as BeamNOCheck;
+}

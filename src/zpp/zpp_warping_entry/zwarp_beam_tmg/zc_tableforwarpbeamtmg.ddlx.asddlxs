@@ -1,0 +1,76 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForWarpBeamTmg', 
+    typeNamePlural: 'TableForWarpBeamTmgs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table For Warp Beam Tmg', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_TableForWarpBeamTmg with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForWarpBeamTmg', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table For Warp Beam Tmg', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Beamno'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Beamno'
+  } ]
+  Beamno;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Beamwt'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Beamwt'
+  } ]
+  Beamwt;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Remark'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Remark'
+  } ]
+  Remark;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LastChangedAt;
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition For Fents Regs Chindi Screen'
+define service ZPP_FRC_DEF {
+  expose ZPP_FRC_CDS2 as FRC;
+  expose ZFRC_CDS_SLOC as Sloc;
+  expose ZPP_FRC_PRODUCT as ProductBaseUnit;
+}

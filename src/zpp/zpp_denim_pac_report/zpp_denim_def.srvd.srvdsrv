@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For Class To Odata Service'
+define service ZPP_DENIM_DEF {
+  expose ZPP_DENIM_PACKING_CLASS_CDS;
+}

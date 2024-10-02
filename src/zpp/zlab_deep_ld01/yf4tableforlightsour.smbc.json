@@ -1,0 +1,38 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain F4 TABLE FOR LIGHT SOURCE",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "YUI_F4TABLEFORLIGHTSOUR_O4",
+    "serviceName": "YUI_F4TABLEFORLIGHTSOUR_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "F4TableForLightSAll",
+    "name": "F4 TABLE FOR LIGHT SOURCE",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "F4TableForLightSAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "F4TableForLightSour",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

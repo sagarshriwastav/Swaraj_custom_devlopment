@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ZDAILYMAIL_JOB",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZDAILY_MAIL"
+  },
+  "parameters": [
+    {
+      "name": "S_ID"
+    },
+    {
+      "name": "P_DESCR"
+    },
+    {
+      "name": "P_COUNT"
+    },
+    {
+      "name": "P_SIMUL"
+    }
+  ]
+}

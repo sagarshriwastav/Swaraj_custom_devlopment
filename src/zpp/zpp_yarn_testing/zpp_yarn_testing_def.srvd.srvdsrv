@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service Definition For Yarn Testing Module Pool'
+define service ZPP_YARN_TESTING_DEF {
+  expose ZPP_YARN_TESTING_CDS      as YarnTesting;
+  expose ZPP_YARN_PARAMETERS       as ZParameters;
+  expose ZPP_YARN_PARTYBILL        as partybillname;
+  expose ZPP_LOGINID               as loginid;
+  expose I_Supplier                as Supplier;
+  expose ZPP_YARN_TESTING_HEAD_CDS as ChangeHeadTesting;
+  expose ZPP_YARN_TESTTEM_CDS      as ChangeItemTesting;
+}

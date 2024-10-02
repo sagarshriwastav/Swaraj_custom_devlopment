@@ -1,0 +1,73 @@
+managed with additional save implementation in class YBP_I_F4TABLEFORLIGHTSOUR_S unique;
+strict;
+with draft;
+define behavior for YI_F4TableForLightSour_S alias F4TableForLightSAll
+draft table YF4_LIGHSOU_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _F4TableForLightSour { create ( features : instance ); with draft; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+  }
+
+define behavior for YI_F4TableForLightSour alias F4TableForLightSour ##UNMAPPED_FIELD
+persistent table YF4_LIGHSOURCE
+draft table YF4_LIGHSOURC_D
+lock dependent by _F4TableForLightSAll
+authorization dependent by _F4TableForLightSAll
+
+{
+  field ( mandatory : create )
+   Srno;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Srno;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for YF4_LIGHSOURCE
+  {
+    Srno = SRNO;
+    SourceCode = SOURCE_CODE;
+    Finish = FINISH;
+  }
+
+  association _F4TableForLightSAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

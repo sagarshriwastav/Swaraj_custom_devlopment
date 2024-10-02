@@ -1,0 +1,16 @@
+managed implementation in class zbp_543_approvel_cds unique;
+strict ( 2 );
+
+define behavior for Z543_APPROVEL_CDS //alias <alias_name>
+persistent table z543_approvel
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+  mapping for z543_approvel{
+    Batch = batch;
+    Weft = weft;
+  }
+}

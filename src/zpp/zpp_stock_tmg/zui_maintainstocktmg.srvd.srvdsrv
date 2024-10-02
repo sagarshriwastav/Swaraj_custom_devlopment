@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_MaintainStockTmg_S'
+define service ZUI_MAINTAINSTOCKTMG {
+  expose ZI_MAINTAINSTOCKTMG_S as MaintainStockTmgAll;
+  expose ZI_MAINTAINSTOCKTMG as MaintainStockTmg;
+}

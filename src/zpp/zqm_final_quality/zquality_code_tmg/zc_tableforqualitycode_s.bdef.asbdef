@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_TableForQualityCode_S alias TableForQualityCAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _TableForQualityCode { create; with draft; }
+}
+
+define behavior for ZC_TableForQualityCode alias TableForQualityCode
+
+{
+  use update;
+  use delete;
+
+  use association _TableForQualityCAll { with draft; }
+}

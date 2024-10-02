@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For Packing List Domestic Print'
+define service ZSD_PACKINGLIST_DEF {
+  expose ZSD_DOMESTIC_PRINT as Delivery;
+}

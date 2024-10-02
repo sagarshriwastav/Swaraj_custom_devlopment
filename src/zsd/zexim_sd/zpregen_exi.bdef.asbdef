@@ -1,0 +1,74 @@
+managed implementation in class zbp_pregen_exi unique;
+strict ( 2 );
+
+define behavior for ZPREGEN_EXI //alias <alias_name>
+persistent table zpregen_exim
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zpregen_exim
+    {
+      Docno               = docno;
+      Doctype             = doctype;
+      DocDate             = doc_date;
+      RefreanceNo         = refreance_no;
+      RefreanceDate       = refreance_date;
+      Peformano           = peformano;
+      Peformadate         = peformadate;
+      Deliveryno          = deliveryno;
+      Deliverydate        = deliverydate;
+      TransporterName     = transporter_name;
+      Lrno                = lrno;
+      LrDate              = lr_date;
+      TruckNo             = truck_no;
+      Blno                = blno;
+      Bldate              = bldate;
+      Containerno         = containerno;
+      Containersize       = containersize;
+      RfidNo              = rfid_no;
+      Lineseal            = lineseal;
+      Vesselno            = vesselno;
+      Precarrier          = precarrier;
+      Portofdischarge     = portofdischarge;
+      Portofloading       = portofloading;
+      Epcgno              = epcgno;
+      Epcgdate            = epcgdate;
+      Remarks             = Remarks;
+      Remarks1            = remarks1;
+      Remarks2            = remarks2;
+      PaymentTerms        = Payment_Terms;
+      Deliveryterms       = deliveryterms;
+      Incotermslocation   = incotermslocation;
+      Shipmentmark        = shipmentmark;
+      Shipmentdate        = shipmentdate;
+      Weightofcontainer   = weightofcontainer;
+      exportname1         = Exportname1;
+      street1             = Street1;
+      street2             = Street2;
+      street3             = Street3;
+      city                = City;
+      country             = Country;
+      exporteriecno       = Exporteriecno;
+      authorisedsigntory  = Authorisedsigntory;
+      designation         = Designation;
+      Nameofcustomsbroker = nameofcustomsbroker;
+      Maxperwt            = maxperwt;
+      Contareweight       = contareweight;
+      Weighslip           = weighslip;
+      Shipmenttype        = shipmenttype;
+      Marksndnumber       = marksndnumber;
+      Descgoods           = descgoods;
+      salesdocumentdate   = Salesdocumentdate;
+      Descgoodsother      = descgoodsother;
+      Detailsbylc         = detailsbylc;
+      Otherdetails        = otherdetails;
+      Billofexchange      = billofexchange;
+      Nonegotiable        = nonnegotiable;
+
+    }
+
+}

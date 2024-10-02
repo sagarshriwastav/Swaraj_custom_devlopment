@@ -1,0 +1,73 @@
+managed implementation in class Ybp_gate_ddm unique;
+strict ( 2 );
+
+define behavior for YGATE_DDM //alias <alias_name>
+persistent table ygatehead1
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+   field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LocalLastChangedAt,
+   LastChangedAt,
+   LastChangedBy;
+
+
+  create;
+  update;
+  delete;
+  mapping for ygatehead1
+  {
+    Gateno = gateno;
+    EntryType = entry_type;
+    Werks = werks;
+    PlantName = plant_name;
+    Operator = operator;
+    Lifnr = lifnr;
+    Kunnr = kunnr;
+    Name1 = name1;
+    LrDate = lr_date;
+    LrNo = lr_no;
+    VehicalNo = vehical_no;
+    GateInDt = gate_in_dt;
+    GateInTm = gate_in_tm;
+    Driver = driver;
+    DrLisc = dr_lisc;
+    GateOutDt = gate_out_dt;
+    GateOutTm = gate_out_tm;
+    Remark = remark;
+    Approved = approved;
+    GrossWt = gross_wt;
+    TareWt = tare_wt;
+    NetWt = net_wt;
+    GrUnit = gr_unit;
+    TrUnit = tr_unit;
+    GrOper = gr_oper;
+    TrOper = tr_oper;
+    GrDate = gr_date;
+    TrDate = tr_date;
+    WtBrNo = wt_br_no;
+    WtPortNo = wt_port_no;
+    OrgInv = org_inv;
+    EWay   = e_way;
+    EwayDate = eway_date ;
+    GateInDate = gate_in_date ;
+    RefGate =  ref_gate ;
+    Plant  = plant  ;
+    Driverno = driverno ;
+    Puchgrp = puchgrp ;
+    Cancelled = cancelled ;
+    Invoice = invoice ;
+    Invdt = invdt;
+    Container = container ;
+    Entrydate = entrydate;
+    sleepno = sleepno;
+     CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

@@ -1,0 +1,79 @@
+managed with additional save implementation in class ZBP_I_ZPACKDGRADE_S unique;
+strict;
+with draft;
+
+define behavior for ZI_ZpackdScreenGRAD_S alias ZpackdScreeGRAD
+draft table ZWEAV_GRAD_T_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ZpackdGRADTable { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_ZGRADScreenTable alias ZpackdGRADTable
+persistent table ZWEAV_GRAD_TAB
+draft table ZWEAV_GRAD_TAB_D
+etag master LocalLastChangedAt
+lock dependent by _ZpackdScreeGRAD
+authorization dependent by _ZpackdScreeGRAD
+
+{
+  field ( mandatory : create )
+   Werks,
+   Prctr,
+   Grade;
+
+  field ( readonly )
+   SingletonID,
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Werks,
+   Prctr,
+   Grade;
+
+
+  update( features : global );
+  delete( features : global );
+
+  factory action ( features : instance ) CopyZpackdGRADTable parameter ZD_CopyZpackdGRAD [1];
+
+  mapping for ZWEAV_GRAD_TAB
+  {
+    Werks = WERKS;
+    Prctr = PRCTR;
+    Grade = GRADE;
+    Zdesc = ZDESC;
+    Zsnro = ZSNRO;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+  association _ZpackdScreeGRAD { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

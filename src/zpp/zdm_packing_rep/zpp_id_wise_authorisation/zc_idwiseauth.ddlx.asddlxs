@@ -1,0 +1,76 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'IdWiseAuth', 
+    typeNamePlural: 'IdWiseAuths', 
+    title: {
+      type: #STANDARD, 
+      label: 'Id Wise Auth', 
+      value: 'Plant'
+    }
+  }
+}
+annotate view ZC_IdWiseAuth with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Plant'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_IdWiseAuth', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Id Wise Auth', 
+    position: 1 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Userid'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Userid'
+  } ]
+  Userid;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Zprogram'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Zprogram'
+  } ]
+  Zprogram;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Department'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Department'
+  } ]
+  Department;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LocalLastChangedAt;
+}

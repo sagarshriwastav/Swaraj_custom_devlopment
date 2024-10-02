@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORWARPBEAMTMG {
+  expose ZC_TABLEFORWARPBEAMTMG_S as TableForWarpBeamAll;
+  expose ZC_TABLEFORWARPBEAMTMG as TableForWarpBeamTmg;
+}

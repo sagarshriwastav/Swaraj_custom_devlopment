@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'YI_F4TableForLightSour_S'
+define service YUI_F4TABLEFORLIGHTSOUR {
+  expose YI_F4TABLEFORLIGHTSOUR_S as F4TableForLightSAll;
+  expose YI_F4TABLEFORLIGHTSOUR as F4TableForLightSour;
+}

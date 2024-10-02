@@ -1,0 +1,89 @@
+managed with additional save implementation in class ZBP_I_MODUELPOOLREPORTTAB_S unique;
+strict;
+with draft;
+define behavior for ZI_ModuelpoolReportTab_S alias ModuelpoolReportAll
+draft table ZMODULEPOOL_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ModuelpoolReportTab { create ( features : instance ); with draft; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+  }
+
+define behavior for ZI_ModuelpoolReportTab alias ModuelpoolReportTab ##UNMAPPED_FIELD
+persistent table ZMODULEPOOLTABLE
+draft table ZMODULEPOOLTA_D
+lock dependent by _ModuelpoolReportAll
+authorization dependent by _ModuelpoolReportAll
+
+{
+  field ( mandatory : create )
+   Sno;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Sno;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZMODULEPOOLTABLE
+  {
+    Sno = SNO;
+    RequimentNo = REQUIMENT_NO;
+    Dates = DATES;
+    SalesOrder = SALES_ORDER;
+    Construction = CONSTRUCTION;
+    CustomerNames = CUSTOMER_NAMES;
+    Buyer = BUYER;
+    EndUse = END_USE;
+    TestStd = TEST_STD;
+    CostRef = COST_REF;
+    ExecutiveName = EXECUTIVE_NAME;
+    PreparedBy = PREPARED_BY;
+    LightSourcePrimary = LIGHT_SOURCE_PRIMARY;
+    LightSourceSecondary = LIGHT_SOURCE_SECONDARY;
+    Others = OTHERS;
+    MechanicalFinish = MECHANICAL_FINISH;
+    ChemicalFinish = CHEMICAL_FINISH;
+    Remark = REMARK;
+    ShadeNames = SHADE_NAMES;
+  }
+
+  association _ModuelpoolReportAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

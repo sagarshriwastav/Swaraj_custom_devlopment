@@ -1,0 +1,18 @@
+managed implementation in class zbp_yarn_con_rep_tmg_cds unique;
+strict ( 2 );
+
+define behavior for ZYARN_CON_REP_TMG_CDS //alias <alias_name>
+persistent table zyarnco_rep_tmg
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zyarnco_rep_tmg
+    {
+      Material = material;
+      Denier   = denier;
+    }
+}

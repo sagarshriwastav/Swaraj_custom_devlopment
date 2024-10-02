@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Def for Warping Entry Module Pool'
+define service ZPP_WARPING_ENTRY_DEF {
+  expose ZPP_WARPING_ENTRY_CDS as Warping_Entry;
+  expose ZPP_WARPING_ENT_SET_NO as Set_No_Cheack;
+  expose ZPP_WARPING_BEAM_NO_CDS as BeamNo;
+  expose ZPP_WARPING_ENTRY_CDS11 as ChangeEntry;
+  expose ZPP_WARPING_SET_NO as Set_No_F4;
+}

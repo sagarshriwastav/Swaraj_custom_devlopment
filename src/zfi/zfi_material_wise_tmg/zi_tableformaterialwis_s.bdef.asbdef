@@ -1,0 +1,61 @@
+managed with additional save implementation in class ZBP_I_TABLEFORMATERIALWIS_S unique;
+strict;
+with draft;
+
+define behavior for ZI_TableForMaterialWis_S alias TableForMaterialAll
+draft table ZFI_MATERIAL_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForMaterialWis { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_TableForMaterialWis alias TableForMaterialWis
+persistent table ZFI_MATERIAL_TMG
+draft table ZFI_MATERIAL_T_D
+lock dependent by _TableForMaterialAll
+authorization dependent by _TableForMaterialAll
+
+{
+  field ( mandatory : create )
+   Material,
+   Description;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Material,
+   Description;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZFI_MATERIAL_TMG
+  {
+    Material = MATERIAL;
+    Description = DESCRIPTION;
+  }
+
+  association _TableForMaterialAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZDENIM_FAULT_TMG_MBC</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>zdenim_fault_tmg</DESCRIPTION>
+     <RESPONSIBLE>CB9980000011</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>XMV</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZPACKN</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZDENIM_FAULT_TMG_MBC</APP_ID>
+    <APP_TYPE>MBC</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZUI_ZPACKDSCREENTABLE_O4</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZDENIM_FAULT_TMG_MBC</APP_ID>
+      <SRVC_NAME>4CC80B2FF77C1BC2CFD27F0FCC0E65</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>ZPACKD SCREEN TABLE - Maintain</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+     <item>
+      <REL_NAME>ZUI_ZPACKDSCREENTABLE_O5</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZDENIM_FAULT_TMG_MBC</APP_ID>
+      <SRVC_NAME>ACCC79E1E0B031B538BC51360ED843</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>ZPACKD SCREEN TABLE - Maintain</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+     <item>
+      <REL_NAME>ZUI_ZPACKDSCREENTABLE_O7</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZDENIM_FAULT_TMG_MBC</APP_ID>
+      <SRVC_NAME>B1771DCA5C8C726C34438BBE69E091</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>ZPACKD SCREEN TABLE - Maintain</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>S_TABU_NAM</AUTH_OBJECT>
+      <STATUS>U</STATUS>
+      <TEXT>Table Access by Generic Standard Tools</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>acJqjA/mHu29gr6mir0ePQ==</UUID>
+        <AUTH_OBJECT>S_TABU_NAM</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Table Access by Generic Standard Tools</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Display,Change</VALUE>
+          <VALUES>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir1ePQ==</UUID>
+            <LOW_VALUE>03</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir0+PQ==</UUID>
+            <LOW_VALUE>02</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>TABLE</FIELD>
+          <VALUE>ZI_ZPOPRAT_T_DABLE,ZI_ZPACKDSCREENTABLE,ZI_ZGRADSCREENTABLE,...</VALUE>
+          <VALUES>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir1+PQ==</UUID>
+            <LOW_VALUE>ZI_ZPOPRAT_T_DABLE</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir2ePQ==</UUID>
+            <LOW_VALUE>ZI_ZPACKDSCREENTABLE</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir2+PQ==</UUID>
+            <LOW_VALUE>ZI_ZGRADSCREENTABLE</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Table Name</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+        </VALUES>
+       </item>
+       <item>
+        <UUID>acJqjA/mHu29gr6mir3ePQ==</UUID>
+        <AUTH_OBJECT>S_TABU_NAM</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0002</AUTH_OBJECT_INSTANCE>
+        <TEXT>Table Access by Generic Standard Tools</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Display,Display change documents</VALUE>
+          <VALUES>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir3+PQ==</UUID>
+            <LOW_VALUE>03</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir4ePQ==</UUID>
+            <LOW_VALUE>08</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>TABLE</FIELD>
+          <VALUE>ZI_ZPACKDSCREENTABLE,ZI_ZPOPRAT_T_DABLE,ZI_ZGRADSCREENTABLE,...</VALUE>
+          <VALUES>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir4+PQ==</UUID>
+            <LOW_VALUE>ZI_ZPACKDSCREENTABLE</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir5ePQ==</UUID>
+            <LOW_VALUE>ZI_ZPOPRAT_T_DABLE</LOW_VALUE>
+           </item>
+           <item>
+            <UUID>acJqjA/mHu29gr6mir5+PQ==</UUID>
+            <LOW_VALUE>ZI_ZGRADSCREENTABLE</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Table Name</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

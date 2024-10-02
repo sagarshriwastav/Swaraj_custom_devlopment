@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZbankTmgTable', 
+    typeNamePlural: 'ZbankTmgTables', 
+    title: {
+      type: #STANDARD, 
+      label: 'ZBANK TMG TABLE', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZC_ZbankTmgTable with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Companycode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Companycode'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZbankTmgTable', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZBANK TMG TABLE', 
+    position: 1 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Customer'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Customer'
+  } ]
+  Customer;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Profitcenter'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Profitcenter'
+  } ]
+  Profitcenter;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  LastChangedAt;
+}

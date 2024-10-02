@@ -1,0 +1,4 @@
+@EndUserText.label: 'service definition FOR TABLE'
+define service ZSERVICETABLE {
+  expose YTABLECDS;
+}

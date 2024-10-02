@@ -1,0 +1,10 @@
+projection;
+strict;
+
+define behavior for zbom_mcp_PROJ alias zbom_mcp_alias
+use etag
+{
+  use create;
+  use update;
+  use delete;
+}

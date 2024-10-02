@@ -1,0 +1,16 @@
+@EndUserText.label: 'Service Def for SortMaster Denim'
+define service ZPP_SORTMASTER_DEF {
+  expose ZPP_SORTMASTER_CDS      as SortMaster_Denim;
+  expose ZPP_MAT_DES_SORT        as mat_des;
+  expose ZPP_MAT_DES_DYEING_SORT as DyeingSortMat;
+  expose ZPP_MAT_DES_YARN        as YarnMat;
+  expose ZPP_WARP_MAT            as warpmat;
+  expose ZPP_DENIM_ROUTE         as ProccesRoute;
+  expose zpp_id_wise_autho       as IDwiseAuth;
+  expose ZPLANT_YPACK            as Plantf4;
+  expose ZPP_PD_SORT             as PdSortf4;
+  expose ZLOOM_TYPE_CDS          as LoomType;
+  expose ZPP_WEAVE_CDS           as WEAVE_CODE;
+  expose ZPP_DYEING_SHADE_TMG    as DyeingShadeTmg;
+  expose ZPP_LOGINID             as loginid;
+}

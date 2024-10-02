@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_TabelForFinishQuali_S alias TabelForFinishQuAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _TabelForFinishQuali { create; with draft; }
+}
+
+define behavior for ZC_TabelForFinishQuali alias TabelForFinishQuali
+
+{
+  use update;
+  use delete;
+
+  use association _TabelForFinishQuAll { with draft; }
+}

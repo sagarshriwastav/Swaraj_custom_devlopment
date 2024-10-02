@@ -1,0 +1,25 @@
+projection;
+strict;
+use draft;
+
+define behavior for ZC_ZgateTable_S alias ZgateTableAll
+
+{
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action SelectCustomizingTransptReq;
+
+  use association _ZgateTable { create; with draft; }
+}
+
+define behavior for ZC_ZgateTable alias ZgateTable
+
+{
+  use update;
+  use delete;
+
+  use association _ZgateTableAll { with draft; }
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZSD_HANGER_PRINT_SER'
+define service ZSD_HANGER_PRINT_SER {
+  expose ZSD_HANGER_PRINT_CDS as zhanger;
+}

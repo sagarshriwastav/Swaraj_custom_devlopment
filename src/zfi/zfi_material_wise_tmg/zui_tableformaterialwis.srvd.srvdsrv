@@ -1,0 +1,4 @@
+define service ZUI_TABLEFORMATERIALWIS {
+  expose ZC_TABLEFORMATERIALWIS_S as TableForMaterialAll;
+  expose ZC_TABLEFORMATERIALWIS as TableForMaterialWis;
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'DATA FOR EWAY BILL'
+define service YEWAY_ENTITY {
+  expose YEINVOICE_CDSS as YEINVOICE_CDS;
+  expose YPLANT_einv as plant;
+  expose YI_CUSTOMER_TAX as Financeinvoicedata;
+}

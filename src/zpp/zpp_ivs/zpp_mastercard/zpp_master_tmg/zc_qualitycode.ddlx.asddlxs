@@ -1,0 +1,119 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'QualityCode', 
+    typeNamePlural: 'QualityCodes', 
+    title: {
+      type: #STANDARD, 
+      label: 'Quality Code', 
+      value: 'Cbcode'
+    }
+  }
+}
+annotate view ZC_QualityCode with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Cbcode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Blend Code'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_QualityCode', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Quality Code', 
+    position: 1 
+  } ]
+  Cbcode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Cgcode'
+   
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Group code'
+  } ]
+   @UI.facet: [ {
+    id: 'ZI_QualityCode', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Quality Code', 
+    position: 1 
+  } ]
+  Cgcode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Rescnt'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Resultant Count'
+    
+  } ]
+  Rescnt;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Maktx'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Material Description'
+    
+  } ]
+  Maktx;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Waste'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Waste %'
+    
+  } ]
+  Waste;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Erdat'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Record Created On'
+    
+  } ]
+  Erdat;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Ernam'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Name of Person'
+    
+  } ]
+  Ernam;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  LastChangedAt;
+}

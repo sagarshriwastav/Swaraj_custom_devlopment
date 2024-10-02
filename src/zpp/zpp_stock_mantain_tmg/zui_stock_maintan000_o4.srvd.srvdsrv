@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_STOCK_MAINTAN001'
+define service ZUI_STOCK_MAINTAN000_O4 {
+  expose ZC_STOCK_MAINTAN001;
+}

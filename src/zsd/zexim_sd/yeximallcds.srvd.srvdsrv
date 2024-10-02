@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service Definition'
+define service YEXIMALLCDS {
+  expose ZEXIM_ALL;
+  expose I_BillingDocument  as BillF4;
+  expose ZPREGN_EXIPROJ     as generaltab_;
+  expose Ybilling_datta     as YEINVOICE_CDS;
+  expose YCONSIGNEDATA_PR1  as YCONSIGNEDATA;
+  expose YEXIM_CALCULATPROJ as Zcalculation;
+  expose ZFREGHTCHARGES_PR1 as ZFREGHTCHARGES;
+  expose ydraft_bl_cds      as Draft_Bl;
+}

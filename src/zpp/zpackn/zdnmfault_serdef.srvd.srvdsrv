@@ -1,0 +1,13 @@
+@EndUserText.label: 'Service definition forZDNMFAULT_SERP'
+define service ZDNMFAULT_SERDEF {
+  expose I_Plant                as PlantData;
+  expose I_StorageLocation      as storage_loc;
+  expose Ymat_STOCK1            as mat_stock;
+  expose ZC_ZpackdScreenTable_S as ZpackdScreenTablAll;
+  expose ZC_ZpackdScreenTable   as ZpackdScreenTable;
+  expose ZWEAVE_GRADETAB        as grading_table;
+  expose zoperator_table        as operator_data;
+  expose Zfault_code            as fault_code;
+  expose ZPP_SORTMASTER_CDS     as DStd;
+  expose I_Supplier             as Supplier;
+}

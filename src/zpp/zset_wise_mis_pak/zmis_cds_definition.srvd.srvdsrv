@@ -1,0 +1,4 @@
+@EndUserText.label: ' ZMIS CDS FOR SERVIES DEFINITION'
+define service ZMIS_CDS_DEFINITION {
+  expose ZMIS_CDS;
+}

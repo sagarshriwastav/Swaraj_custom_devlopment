@@ -1,0 +1,24 @@
+managed implementation in class zbp_qcd_cds unique;
+strict;
+
+define behavior for zqcd_cds //alias <alias_name>
+persistent table zqcd
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  mapping for zqcd
+  {
+    cbcode = Cbcode;
+    cgcode = Cgcode;
+    rescnt = Rescnt;
+    maktx  = Maktx;
+    waste  = Waste;
+    erdat  = Erdat;
+    ernam = Ernam;
+}
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For Set Number Change Program'
+define service ZPP_SETNUMBER_CHANGE_DEF {
+  expose ZPP_SETNUMBER_CHANGE_PROJ as SetNumberChange;
+}

@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ZWEAVE_S', 
+    typeNamePlural: 'ZWEAVE_Ss', 
+    title: {
+      type: #STANDARD, 
+      label: 'Tabel For Master Card Screen F4', 
+      value: 'Weavecode'
+    }
+  }
+}
+annotate view ZC_ZWEAVE_S with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Weavecode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Weavecode'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ZWEAVE_S', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Tabel For Master Card Screen F4', 
+    position: 1 
+  } ]
+  Weavecode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Weavedes'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Weavedes'
+  } ]
+  Weavedes;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  LastChangedAt;
+}

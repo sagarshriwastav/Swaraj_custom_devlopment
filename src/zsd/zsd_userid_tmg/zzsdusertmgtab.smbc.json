@@ -1,0 +1,35 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain ZSD_USER_TMG_TAB",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_ZSDUSERTMGTAB_O4",
+    "serviceName": "ZUI_ZSDUSERTMGTAB_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "ZsdUserTmgTabAll",
+    "name": "ZSD_USER_TMG_TAB",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "ZsdUserTmgTabAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "ZsdUserTmgTab",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true
+      }
+    ]
+  }
+}

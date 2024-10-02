@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZTECO_SERVICE_FOR_PLANT'
+define service ZTECO_SERVICE_FOR_PLANT {
+  expose ZPP_TECO_CDS       as Zplant;
+  expose ZTECO_SUPPLIER_CDS as Zsupplier;
+}
